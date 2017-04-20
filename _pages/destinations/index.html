@@ -1,0 +1,55 @@
+---
+layout: default
+title: Destinations
+nav-order: 1
+
+
+subject-line: !!!! Subject line here !!!!
+campaign-link: campaign-link
+main-cta-label: Join now for luxury city break offers
+
+
+banner-title: A luxury European city break? Yes please
+
+intro-super-title:
+intro-title: A luxury European city break? Yes please
+intro-sub-title: Enjoy champagne travel at prosecco prices
+
+intro-rows:
+  - content: With public holidays and long weekends on the horizon, why not make the most of it with a revitalising city break? With blossom-filled parks and inviting pavement cafés, our European cities positively sparkle in the spring sunshine.
+  - content: We’ve put together a range of deals across the continent’s best springtime spots. And remember, you can be certain of staying at the most luxurious hotels in the best locations – paying less than anyone else for the exact same room.
+
+
+---
+
+
+{% include intro-standard.html %}
+
+
+{% include section-intro.html
+  title="Go somewhere new"
+  description="Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. " %}
+
+
+{% assign categories = site.data.categories %}
+{% for object in categories %}
+  {% include block/feature.html %}
+{% endfor %}
+
+
+{% include block/spacer.html bgcolor="f2f2f2" %}
+
+
+{% include section-text.html bgcolor="ffffff"
+  title="We’re not like other luxury travel companies…"
+  intro="Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. "
+  description="Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet." %}
+
+
+{% assign proof = site.data.proof %}
+{% for object in proof %}
+  {% include block/two-column.html bgcolor="ffffff" blockcolor="f2f2f2" %}
+{% endfor %}
+
+
+{% include block/spacer.html bgcolor="ffffff" %}
