@@ -1,13 +1,31 @@
 
+{% if include.bgcolor %}
+  {% assign bgcolor = include.bgcolor %}
+{% else %}
+  {% assign bgcolor = site.data.style.color-bgcolor %}
+{% endif %}
+
+{% if include.boxcolor %}
+  {% assign boxcolor = include.boxcolor %}
+{% else %}
+  {% assign boxcolor = site.data.style.color-boxcolor %}
+{% endif %}
+
+{% if include.bordercolor %}
+  {% assign bordercolor = include.bordercolor %}
+{% else %}
+  {% assign bordercolor = site.data.style.color-bordercolor %}
+{% endif %}
+
+
 
 {% assign loopindex = forloop.index | modulo: 2 %}
-
 {% if forloop.first or loopindex == 1 %}
 
 <!-- 2 COLUMN SALE CARDS -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
-      <td bgcolor="#f2f2f2" align="center" style="padding: 0 15px;">
+      <td bgcolor="#{{ bgcolor }}" align="center" style="padding: 0 15px;">
         <!-- FIRST ROW -->
         <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
           <tr>
@@ -23,13 +41,13 @@
       <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td>
-            <a href="{% if offer.link %}{{ offer.link }}{% else %}{{ page.campaign-link }}{% endif %}">
-              <img src="{{ site.baseurl }}/img/offers/{{ offer.title | slugify }}.jpg" border="0" alt="" width="285" height="190" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
+            <a href="{% if offer.link %}{{ offer.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}">
+              <img src="img/offers/{{ offer.title | slugify }}.jpg" border="0" alt="" width="285" height="190" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
             </a>
           </td>
         </tr>
         <tr>
-          <td style="background-color: #ffffff; padding: 20px 30px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border: 1px solid #e0e0e0;">
+          <td style="background-color: #{{ boxcolor }}; padding: 20px 30px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
             <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td align="center" style="padding-bottom: 3px; color: #{{ site.data.style.color-text-title }}; {{ site.data.style.text-h4 }}">
@@ -43,13 +61,13 @@
               </tr>
               <tr>
                 <td align="center" style="padding: 10px 0 0 0; color: #{{ site.data.style.color-text-paragraph }}; {{ site.data.style.text-p }}">
-                  From <span style="color: #{{ site.data.style.color-se-orange }}; font-weight: 400; font-size: 16px;">£{{ offer.price }}</span> {{ offer.price-description }}
+                  From <span style="color: #{{ site.data.style.color-theme }}; font-weight: 400; font-size: 16px;">£{{ offer.price }}</span> {{ offer.price-description }}
                 </td>
               </tr>
               <tr>
                 <td align="center" style="padding-top: 15px;">
                   <a
-                    href="{% if offer.link %}{{ offer.link }}{% else %}{{ page.campaign-link }}{% endif %}"
+                    href="{% if offer.link %}{{ offer.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}"
                     style="{{ site.data.style.button-small }}">
                     View offer
                   </a>
