@@ -1,0 +1,73 @@
+---
+layout: default
+
+
+partner-name:
+subject-line: "Enjoy a luxury city break for less this spring"
+campaign-link: link
+main-cta-label: Register now
+
+
+objects:
+
+  intro:
+    - title: Amazing city breaks to get your heart singing
+      subtitle: This spring, enjoy champagne travel at prosecco prices
+      image: intro.jpg
+      image-title: title.png
+      cta: true
+      cta-label: Join now for luxury city break offers
+      link:
+      content-rows:
+        - content: With bank holidays and long weekends on the horizon, why not make the most of it with a revitalising city break? With blossom-filled parks and inviting pavement cafés, our European cities positively sparkle in the spring sunshine.
+        - content: We’ve put together a range of deals across the continent’s best springtime spots. And remember, you can be certain of staying at the most luxurious hotels in the best locations – paying less than anyone else for the exact same room.
+
+
+  categories-intro:
+    - title: Be inspired to escape
+
+
+  proof-intro:
+    - title: We’re not like other luxury travel companies…
+      subtitle:
+      content-rows:
+        - content: Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue.
+        - content: Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue.
+
+
+---
+
+
+
+{% for object in page.objects["intro"] %}
+  {% include blocks/feature.html %}
+{% endfor %}
+
+
+{% for object in page.objects["categories-intro"] %}
+  {% include blocks/section-intro.html %}
+{% endfor %}
+
+
+{% assign categories = site.data.categories %}
+{% for object in categories %}
+  {% include blocks/full-width.html %}
+{% endfor %}
+
+
+{% include includes/cta.html %}
+
+
+{% include includes/spacer.html height="15" bgcolor="ffffff" %}
+
+
+{% for object in page.objects["proof-intro"] %}
+  {% include blocks/section-intro.html bgcolor="ffffff" %}
+{% endfor %}
+
+
+{% assign proof = site.data.proof %}
+{% for object in proof %}
+  {% include blocks/two-column.html bgcolor="ffffff" boxcolor="f2f2f2" %}
+{% endfor %}
+
