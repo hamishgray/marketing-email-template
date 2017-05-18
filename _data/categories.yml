@@ -1,63 +1,57 @@
 
-  - title: London
-    image: london.jpg
-    location: London, England
-    content: Eight million trees, 47% green space, Europe’s greenest big city – London in spring is an unexpected delight. Beat the crowds and sneak a visit in now.
-    cta-label:
+  - title: Mallorca, Spain
+    image: mallorca.jpg
+    content: "Forget the Mallorca of the past. We love the island now for its gorgeously well-appointed hotels, all the better for enjoying those famous white-sand beaches"
+    cta: true
+    cta-label: Find out more
     link:
 
-  - title: Amsterdam
-    image: amsterdam.jpg
-    location: Amsterdam, Netherlands
-    content: Utterly delightful to explore on foot, filled with fascinating buildings and awesome art, Amsterdam is somewhere everyone should tick off at least once.
-    cta-label:
+  - title: Corfu, Greece
+    image: corfu.jpg
+    content: "A much-loved spot with the Secret Escapes team: breathtakingly gorgeous, culturally fascinating, and studded with charming hotels and resorts."
+    cta: true
+    cta-label: Find out more
     link:
 
-  - title: Bruges
-    image: bruges.jpg
-    location: Bruges, Belgium
-    content: Our favourite fairy-tale medieval town, Bruges is dreamy in spring, when the crowds are lighter and the courtyard of the Beguinage is carpeted by daffodils.
-    cta-label:
+  - title: Split, Croatia
+    image: split.jpg
+    content: "A heady blend of ancient and modern, Split offers a dramatic setting with a fun-loving, youthful vibe. Top tip: craft beers and Mexican food at Te Je To. Yum."
+    cta: true
+    cta-label: Find out more
     link:
 
-  - title: Brussels
-    image: brussels.jpg
-    location: Brussels, Belgium
-    content: In the mood for culture? Brussels is bursting with brilliant museums and galleries, with gorgeous old buildings and classic restaurants as a backdrop.
-    cta-label:
-    link:
-
-  - title: Lisbon
+  - title: Lisbon, Portugal
     image: lisbon.jpg
-    location: Lisbon, Portugal
-    content: Turn down the tempo with a break in chilled-out Lisbon. Ride the trams, climb the hills and tuck into delicious Portuguese food at the Time Out Market.
-    cta-label:
+    content: "There’s nothing like the blue sky of a Lisbon summer, so make sure you book a hotel with a fine terrace. Enjoy fresh seafood, lively bars and plenty of shopping."
+    cta: true
+    cta-label: Find out more
     link:
 
-  - title: Valencia
-    image: valencia.jpg
-    location: Valencia, Spain
-    content: Still something of a hidden gem, Valencia offers a wealth of cultural highlights in the spring, plus atmospheric streets and markets for idyllic wandering.
-    cta-label:
+  - title: Nice & Cannes, France
+    image: nice.jpg
+    content: "Beautiful Nice is as glamorous as ever. Fancy taking it up a notch? Make like a celeb and head to Cannes. And remember – we can get you all this luxe for less."
+    cta: true
+    cta-label: Find out more
     link:
 
-  - title: Berlin
-    image: berlin.jpg
-    location: Berlin, Germany
-    content: Exciting, diverse, surprising; there’s nowhere quite like Berlin. From its incredible history to the wild nightlife, you won’t ever forget your visit.
-    cta-label:
-    link:
-
-  - title: Rome
-    image: rome.jpg
-    location: Rome, Italy
-    content: A little more peaceful, springtime Rome offers all the classics you’d expect – plus a few you might not, like the butterfly-filled American Academy Gardens.
-    cta-label:
-    link:
-
-  - title: Barcelona
+  - title: Barcelona, Spain
     image: barcelona.jpg
-    location: Barcelona, Spain
-    content: As the good weather returns, La Rambla comes alive again – and the open-air terrazas start beckoning with cold beers and tasty tapas. A springtime fave.
-    cta-label:
+    content: "A city like no other, the fascinating architecture of Barcelona is perfect for summertime wandering. Our top tip: choose a hotel with rooftop pool."
+    cta: true
+    cta-label: Find out more
     link:
+
+  - title: Venice & Rimini, Italy
+    image: venice.jpg
+    content: "Two of our favourite spots for summer trips, both on the Adriatic: Venice, for culture and photos, and Rimini, for beaches and up-til-dawn nightlife."
+    cta: true
+    cta-label: Find out more
+    link:
+
+  - title: Rhodes, Greece
+    image: rhodes.jpg
+    content: "Azure bays, jagged cliffs, atmospheric medieval towns… a holiday to Rhodes is a unique experience. And the best way to do it is in complete luxury – for less."
+    cta: true
+    cta-label: Find out more
+    link:
+

@@ -12,7 +12,7 @@ color-bordercolor: e0e0e0 #e0e0e0
 #dark theme
 color-bgcolor-dark: 000000 #000000
 color-boxcolor-dark: 000000 #000000
-color-bordercolor-dark: 1a1a1a #1a1a1a
+color-bordercolor-dark: 333333 #333333
 color-text-title-dark: ffffff #ffffff
 color-text-paragraph-dark: f2f2f2 #f2f2f2
 
@@ -26,8 +26,8 @@ text-banner: "font-size: 48px; line-height: 50px; font-family: Helvetica, Arial,
 
 text-h1: "font-size: 26px; line-height: 32px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 200;"
 text-h2: "font-size: 14px; line-height: 20px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 500; text-transform: uppercase; letter-spacing: 2px;"
-text-h3: "font-size: 18px; line-height: 24px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 500;"
-text-h4: "font-size: 14px; line-height: 20px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 500; text-transform: uppercase; letter-spacing: 2px;"
+text-h3: "font-size: 18px; line-height: 24px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600;"
+text-h4: "font-size: 14px; line-height: 20px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;"
 text-h5: "font-size: 12px; line-height: 16px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400; text-transform: uppercase; letter-spacing: 1px;"
 text-p-lead: "font-size: 17px; line-height: 27px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 200;"
 text-p: "font-size: 15px; line-height: 21px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 300;"
@@ -39,10 +39,10 @@ text-p-small: "font-size: 13px; line-height: 18px; font-family: Helvetica, Arial
 button-large: >
   font-size: 13px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600; color: #ffffff; text-decoration: none; background-color: #ff8c00; border-top: 10px solid #ff8c00; border-bottom: 10px solid #ff8c00; border-left: 32px solid #ff8c00; border-right: 32px solid #ff8c00; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 2px; text-transform: uppercase;
 button-small: >
-  font-size: 12px; font-family: Helvetica, Arial, sans-serif, 'Open Sans';  font-weight: 400; color: #ffffff; text-decoration: none; background-color: #ff8c00; border-top: 6px solid #ff8c00; border-bottom: 6px solid #ff8c00; border-left: 24px solid #ff8c00; border-right: 24px solid #ff8c00; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 1px; text-transform: uppercase;
+  font-size: 12px; font-family: Helvetica, Arial, sans-serif, 'Open Sans';  font-weight: 600; color: #ffffff; text-decoration: none; background-color: #ff8c00; border-top: 6px solid #ff8c00; border-bottom: 6px solid #ff8c00; border-left: 24px solid #ff8c00; border-right: 24px solid #ff8c00; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 2px; text-transform: uppercase;
 button-large-invert: >
   font-size: 13px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600; color: #ff8c00; text-decoration: none; background-color: #ffffff; border-top: 10px solid #ffffff; border-bottom: 10px solid #ffffff; border-left: 32px solid #ffffff; border-right: 32px solid #ffffff; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 2px; text-transform: uppercase;
 button-small-invert: >
-  font-size: 12px; font-family: Helvetica, Arial, sans-serif, 'Open Sans';  font-weight: 400; color: #ff8c00; text-decoration: none; background-color: #ffffff; border-top: 6px solid #ffffff; border-bottom: 6px solid #ffffff; border-left: 24px solid #ffffff; border-right: 24px solid #ffffff; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 1px; text-transform: uppercase;
+  font-size: 12px; font-family: Helvetica, Arial, sans-serif, 'Open Sans';  font-weight: 600; color: #ff8c00; text-decoration: none; background-color: #ffffff; border-top: 6px solid #ffffff; border-bottom: 6px solid #ffffff; border-left: 24px solid #ffffff; border-right: 24px solid #ffffff; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; display: inline-block; letter-spacing: 1px; text-transform: uppercase;
 
 

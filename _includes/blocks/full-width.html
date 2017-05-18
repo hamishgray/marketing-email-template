@@ -132,7 +132,7 @@
 
                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
-                              <td align="left" style="padding:0 {{gutter}}px {{gutter}}px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
+                              <td align="left" style="padding:0 {{gutter}}px {{gutter}}px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p-small }}">
                                 {{ object.content }}
                               </td>
                             </tr>
@@ -143,10 +143,10 @@
                         {% if object.cta %}
                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
-                              <td align="left" style="padding: {{gutter | divided_by:2}}px {{gutter}}px; text-align: center" class="mobile-pad-3c mobile-center-align">
+                              <td align="left" style="padding: 0 {{gutter}}px;" class="mobile-pad-3c mobile-center-align">
                                 <a
                                   href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}"
-                                  style="{% if include.theme == 'dark' %}{{ site.data.style.button-large-invert }}{% else %}{{ site.data.style.button-large }}{% endif %}">
+                                  style="{% if include.theme == 'dark' %}{{ site.data.style.button-small-invert }}{% else %}{{ site.data.style.button-small }}{% endif %}">
                                   {% if object.cta-label %}{{ object.cta-label }}{% else %}{{ page.main-cta-label }}{% endif %}
                                 </a>
                               </td>
