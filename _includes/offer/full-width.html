@@ -1,44 +1,32 @@
 
-{% if include.bgcolor %}
-  {% assign bgcolor = include.bgcolor %}
+{% include components/_settings.html %}
+
+{% if include.height %}
+  {% assign height = include.height %}
 {% else %}
-  {% assign bgcolor = site.data.style.color-bgcolor %}
+  {% assign height = "180" %}
 {% endif %}
 
-{% if include.boxcolor %}
-  {% assign boxcolor = include.boxcolor %}
-{% else %}
-  {% assign boxcolor = site.data.style.color-boxcolor %}
-{% endif %}
-
-{% if include.bordercolor %}
-  {% assign bordercolor = include.bordercolor %}
-{% else %}
-  {% assign bordercolor = site.data.style.color-bordercolor %}
-{% endif %}
-
-
-
-<!-- SALE CARD - SMALL -->
+<!-- offer/full-width.html -->
 <table bgcolor="#{{ bgcolor }}" border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <td align="center" style="padding: 0 15px 30px;">
+    <td align="center" style="padding: 0 {{gutter}}px {{gutter | times:2}}px;">
       <table bgcolor="#{{ boxcolor }}" border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table" style="border-radius: 4px;">
         <tr>
-          <td style="padding: 0;" class="mobile-wrapper">
+          <td class="mobile-wrapper">
             <!-- TWO COLUMNS -->
             <table align="center" cellspacing="0" cellpadding="0" border="0" width="600" class="responsive-table">
               <tr>
                 <td class="mobile-wrapper" valign="middle" style="vertical-align:middle;">
                   <!-- LEFT COLUMN -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="50%" align="left" class="responsive-table" style="height: 180px;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="50%" align="left" class="responsive-table" style="height: {{height}}px;">
                     <tr>
-                      <td style="padding: 0; vertical-align:middle;" valign="middle">
+                      <td style="vertical-align:middle;" valign="middle">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                           <tr>
                             <td align="center" valign="middle">
-                              <a href="{% if offer.link %}{{ offer.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}">
-                                <img class="border-reset" src="img/offers/{{ offer.title | slugify }}.jpg" width="300" style="display: block; border-top-left-radius: 4px; border-bottom-left-radius: 4px; width: 100%; height:auto;" alt="" border="0" class="img-max" />
+                              <a href="{% if object.link %}{{ object.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}">
+                                <img class="border-reset" src="img/offers/{{ object.title | slugify }}.jpg" width="300" style="display: block; border-top-left-radius: 4px; border-bottom-left-radius: 4px; width: 100%; height:auto;" alt="" border="0" class="img-max" />
                               </a>
                             </td>
                           </tr>
@@ -47,30 +35,28 @@
                     </tr>
                   </table>
                   <!-- RIGHT COLUMN -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="49.999999%" align="right" class="responsive-table" style="height: 180px;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="49.999999%" align="right" class="responsive-table" style="height: {{height}}px;">
                     <tr>
-                      <td style="padding: 15px 20px; vertical-align:middle;" valign="middle">
+                      <td style="padding: {{gutter}}px 0; vertical-align:middle;" valign="middle">
+
+                        {% include components/title.html title-style="h3" %}
+
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                           <tr>
-                            <td align="left" style="color: #{{ site.data.style.color-text-title }}; {{ site.data.style.text-h4 }}">
-                              {{ offer.title }}
+                            <td align="{{align}}" width="300" style="padding: {{gutter | divided_by:2}}px {{gutter | times:2}}px 0; color: #{{ color-text-paragraph }}; {{ site.data.style.text-h5 }}">
+                              {{ object.location }}
                             </td>
                           </tr>
                           <tr>
-                            <td align="left" width="300" style="padding: 10px 0 0; color: #{{ site.data.style.color-text-paragraph }}; {{ site.data.style.text-h5 }}">
-                              {{ offer.location }}
+                            <td align="{{align}}" width="300" style="padding: {{gutter | divided_by:2}}px {{gutter | times:2}}px 0; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p-small }}">
+                              From <span style="color: #{{ site.data.style.color-se-orange }}; font-weight: 400; font-size: 16px;">£{{ object.price }}</span> {{ object.price-description }}
                             </td>
                           </tr>
                           <tr>
-                            <td align="left" width="300" style="padding: 10px 0 0 0; color: #{{ site.data.style.color-text-paragraph }}; {{ site.data.style.text-p-small }}">
-                              From <span style="color: #{{ site.data.style.color-theme }}; font-weight: 400; font-size: 16px;">£{{ offer.price }}</span> {{ offer.price-description }}
-                            </td>
-                          </tr>
-                          <tr>
-                            <td align="left" width="300" style="padding: 15px 0 0 0;">
+                            <td align="{{align}}" width="300" style="padding: {{gutter}}px {{gutter | times:2}}px 0;">
                               <a
-                                href="{% if offer.link %}{{ offer.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}"
-                                style="{{ site.data.style.button-small }}">
+                                href="{% if object.link %}{{ object.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}"
+                                style="{{ site.data.style.button-subtle }}">
                                 View offer
                               </a>
                             </td>

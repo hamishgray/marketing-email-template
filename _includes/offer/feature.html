@@ -1,23 +1,9 @@
 
-{% if include.bgcolor %}
-  {% assign bgcolor = include.bgcolor %}
-{% else %}
-  {% assign bgcolor = site.data.style.color-bgcolor %}
-{% endif %}
+{% include components/_settings.html %}
 
-{% if include.boxcolor %}
-  {% assign boxcolor = include.boxcolor %}
-{% else %}
-  {% assign boxcolor = site.data.style.color-boxcolor %}
-{% endif %}
 
-{% if include.bordercolor %}
-  {% assign bordercolor = include.bordercolor %}
-{% else %}
-  {% assign bordercolor = site.data.style.color-bordercolor %}
-{% endif %}
 
-<!-- SALE CARD - LARGE -->
+<!-- offer/feature.html -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td bgcolor="#{{ bgcolor }}" align="center" style="padding: 0 15px 30px;">
@@ -28,8 +14,8 @@
               <!-- HERO IMAGE -->
               <tr>
                 <td>
-                  <a href="{% if offer.link %}{{ offer.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}">
-                    <img src="img/offers/{{ offer.title | slugify }}.jpg" width="600" border="0" alt="" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
+                  <a href="{% if object.link %}{{ object.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}">
+                    <img src="img/offers/{{ object.title | slugify }}.jpg" width="600" border="0" alt="" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
                   </a>
                 </td>
               </tr>
@@ -37,16 +23,12 @@
             <table bgcolor="#{{ boxcolor }}" width="100%" border="0" cellspacing="0" cellpadding="0">
               <!-- COPY -->
               <tr>
-                <td>
+                <td style="padding: {{gutter}}px {{gutter}}px;">
+                  {% include components/title.html title-style="h2" %}
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <td align="left" style="padding: 20px 30px 0; color: #{{ site.data.style.color-text-title }}; {{ site.data.style.text-h3 }}">
-                        {{ offer.title }}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td align="left" style="padding: 10px 30px 20px; color: #{{ site.data.style.color-text-paragraph }}; {{ site.data.style.text-p }}">
-                        {{ offer.description }}
+                      <td align="left" style="padding: {{gutter | divided_by:2}}px 0 0; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
+                        {{ object.content }}
                       </td>
                     </tr>
                   </table>
@@ -54,16 +36,16 @@
               </tr>
               <!-- TWO COLUMNS -->
               <tr>
-                <td valign="top" class="mobile-wrapper" style="border-top: 1px solid #{{ bordercolor }}; padding: 20px 0;">
+                <td valign="top" class="mobile-wrapper" style="border-top: 1px solid #{{ bordercolor }}; padding: 15px 0;">
                   <!-- LEFT COLUMN -->
                   <table cellpadding="0" cellspacing="0" border="0" width="360" align="left" class="responsive-table">
                     <tr>
-                      <td align="left" style="padding: 0 30px 5px; color: #{{ site.data.style.color-text-paragraph }}; {{ site.data.style.text-p }}">
-                          From <span style="color: #{{ site.data.style.color-theme }}; font-weight: 600;">£{{ offer.price }}</span> {{ offer.price-description }}
+                      <td align="left" style="padding: 0 15px 5px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
+                          From <span style="color: #{{ site.data.style.color-se-orange }}; font-weight: 600;">£{{ object.price }}</span> {{ object.price-description }}
                       </td>
                     </tr>
                     <tr>
-                      <td align="left" width="300" style="padding: 0 30px; color: #{{ site.data.style.color-text-paragraph }}; {{ site.data.style.text-p }}">
+                      <td align="left" width="300" style="padding: 0 15px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
                         *Additional information.
                       </td>
                     </tr>
@@ -71,13 +53,13 @@
                   <!-- RIGHT COLUMN -->
                   <table cellpadding="0" cellspacing="0" border="0" width="239" class="responsive-table">
                     <tr>
-                      <td style="padding: 0 30px 0 0;">
+                      <td style="padding: 0 15px 0 0;">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="responsive-table">
                           <tr>
                             <td width="300" style="padding: 0 0 0 20px; text-align:right" class="mobile-pad-3c mobile-center-align">
                               <a
-                                href="{% if offer.link %}{{ offer.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}"
-                                style="{{ site.data.style.button-small }}">
+                                href="{% if object.link %}{{ object.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}"
+                                style="{{ site.data.style.button-large }}">
                                 View offer
                               </a>
                             </td>

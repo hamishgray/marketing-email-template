@@ -2,7 +2,7 @@
   - title: An offer
     category: category-1
     location: Region, Country
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure architecto eum exercitationem neque.
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure architecto eum exercitationem neque.
     price: 999999
     price-description: / room per night
     saved: 40%
@@ -12,7 +12,7 @@
   - title: Another offer
     category: category-2
     location: Region, Country
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure architecto eum exercitationem neque.
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure architecto eum exercitationem neque.
     price: 999999
     price-description: / room per night
     link:
@@ -20,7 +20,7 @@
   - title: A third offer
     category: category-3
     location: Region, Country
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure architecto eum exercitationem neque.
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure architecto eum exercitationem neque.
     price: 999999
     price-description: / room per night
     link: offer-link
@@ -28,7 +28,7 @@
   - title: Fourth offer
     category: category-4
     location: Region, Country
-    description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure architecto eum exercitationem neque.
+    content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure architecto eum exercitationem neque.
     price: 999999
     price-description: / room per night
     link:

@@ -1,0 +1,97 @@
+---
+layout: default
+theme: dark
+
+
+preheader-text: We’ve got the perfect summer escape for you
+subject-line: "Discover the secret to luxury Mediterranean breaks"
+campaign-link: "#campaign-link"
+main-button-label: Sign up now
+
+
+objects:
+
+  intro:
+    - title: We’ve got the perfect summer escape for you
+      subtitle: JOIN TODAY TO FIND A SUMPTUOUS BREAK IN THE SUN – WITHOUT BREAKING THE BANK
+      image: intro.jpg
+      image-title: title.png
+      button: true
+      link:
+      content-rows:
+        - content: When holiday season beckons, the glorious Mediterranean never fails to hit the spot. Miles of beaches, beautiful old villages and heavenly local dishes – not to mention sumptuous hotels – conspire to make every break linger in the mind long after you come home.
+        - content: Which is why here at Secret Escapes we hand-pick the very best travel deals to make sure you can enjoy a European summer holiday in unforgettable luxury – without spending a fortune.
+
+
+  destinations-intro:
+    - title: Incredible destinations
+      content: Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+
+
+  proof-intro:
+    - title: We’re not like other luxury travel companies…
+
+
+  testimonials-intro:
+    - title: Hear from our customers
+      subtitle: Cum sociis natoque penatibus et magnis dislus
+
+
+  process-intro:
+    - image: bg.jpg
+      banner-title: WHAT ARE YOU WAITING FOR?
+
+
+---
+
+
+
+{% for object in page.objects["intro"] %}
+  {% include blocks/feature.html theme="dark" bgcolor="1a1a1a" boxcolor="333333" %}
+{% endfor %}
+
+
+
+
+{% for object in page.objects["destinations-intro"] %}
+  {% include blocks/section-intro.html theme="dark" bgcolor="1a1a1a" %}
+{% endfor %}
+
+{% assign destinations = site.data.destinations %}
+{% for object in destinations %}
+  {% include blocks/two-column.html height="240" align="center" theme="dark" bgcolor="1a1a1a" boxcolor="333333" %}
+{% endfor %}
+
+{% include includes/button.html button-label="Start exploring" bgcolor="1a1a1a" %}
+
+
+
+
+{% include components/spacer.html height="15" bgcolor="1a1a1a" %}
+
+{% for object in page.objects["testimonials-intro"] %}
+  {% include blocks/section-intro.html bgcolor="1a1a1a" theme="dark" %}
+{% endfor %}
+
+{% assign testimonials = site.data.testimonials %}
+{% for object in testimonials %}
+  {% include blocks/testimonial.html height="240" bgcolor="1a1a1a" boxcolor="333333" theme="dark" %}
+{% endfor %}
+
+{% include includes/button.html button-label="Sign up now" bgcolor="1a1a1a" %}
+
+
+
+
+{% include components/spacer.html height="15" bgcolor="1a1a1a" %}
+
+{% for object in page.objects["proof-intro"] %}
+  {% include blocks/section-intro.html bgcolor="1a1a1a" theme="dark" %}
+{% endfor %}
+
+{% assign proof = site.data.proof %}
+{% for object in proof %}
+  {% include blocks/two-column.html bgcolor="1a1a1a" boxcolor="333333" theme="dark" %}
+{% endfor %}
+
+

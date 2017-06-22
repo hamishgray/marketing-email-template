@@ -1,0 +1,28 @@
+
+{% if include.button-style == "large" %}
+  {% assign button-style = site.data.style.button-large %}
+{% elsif include.button-style == "small" %}
+  {% assign button-style = site.data.style.button-small %}
+{% elsif include.button-style == "subtle" %}
+  {% assign button-style = site.data.style.button-subtle %}
+{% else %}
+  {% assign button-style = site.data.style.button-small %}
+{% endif %}
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-radius: 4px;">
+
+  <tr>
+    <td align="{{ align }}" style="padding: {{gutter}}px {{gutter | times:2}}px 0;" class="mobile-pad-3c">
+      <a
+        href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}"
+        style="{{ button-style }}">
+        {% if object.button-label %}
+          {{ object.button-label }}
+        {% else %}
+          {{ page.main-button-label }}
+        {% endif %}
+      </a>
+    </td>
+  </tr>
+
+</table>

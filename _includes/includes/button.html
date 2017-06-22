@@ -7,7 +7,7 @@
   {% assign bgcolor = site.data.style.color-bgcolor %}
 {% endif %}
 
-<!-- cta.html -->
+<!-- button.html -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td bgcolor="#{{ bgcolor }}" align="center">
@@ -21,7 +21,7 @@
                   <a
                     href="{% if include.link %}{{ include.link }}{% else %}{{ page.campaign-link }}{% endif %}"
                     style="{% if include.theme == 'dark' %}{{ site.data.style.button-large-invert }}{% else %}{{ site.data.style.button-large }}{% endif %}">
-                    {% if include.cta-label %}{{ include.cta-label }}{% else %}{{ page.main-cta-label }}{% endif %}
+                    {% if include.button-label %}{{ include.button-label }}{% else %}{{ page.main-button-label }}{% endif %}
                   </a>
                 </td>
               </tr>

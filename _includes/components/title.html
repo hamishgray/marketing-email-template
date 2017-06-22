@@ -1,0 +1,48 @@
+
+<!-- TITLE STYLES -->
+{% if include.title-style == "h1" %}
+  {% assign title-style = site.data.style.text-h1 %}
+{% elsif include.title-style == "h2" %}
+  {% assign title-style = site.data.style.text-h2 %}
+{% elsif include.title-style == "h3" %}
+  {% assign title-style = site.data.style.text-h3 %}
+{% elsif include.title-style == "h4" %}
+  {% assign title-style = site.data.style.text-h4 %}
+{% elsif include.title-style == "h5" %}
+  {% assign title-style = site.data.style.text-h5 %}
+{% elsif include.title-style == "h6" %}
+  {% assign title-style = site.data.style.text-h6 %}
+{% else %}
+  {% assign title-style = site.data.style.text-h1 %}
+{% endif %}
+
+{% if include.title %}
+  {% assign title = include.title %}
+{% else %}
+  {% assign title = object.title %}
+{% endif %}
+
+{% if include.subtitle %}
+  {% assign subtitle = include.subtitle %}
+{% else %}
+  {% assign subtitle = object.subtitle %}
+{% endif %}
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="{{ align }}" style="padding: 0 {{gutter | times:2}}px {% if subtitle %}{{gutter | divided_by:2}}px{% endif %}; color: #{{ color-text-title }}; {{ title-style }}" class="padding-copy-header">
+      {{ title }}
+    </td>
+  </tr>
+</table>
+
+{% if subtitle %}
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="{{ align }}" style="padding: 0 {{gutter | times:2}}px; color: #{{ color-text-title }}; {{ site.data.style.text-h4 }}" class="padding-copy-header">
+        {{ subtitle }}
+      </td>
+    </tr>
+  </table>
+{% endif %}

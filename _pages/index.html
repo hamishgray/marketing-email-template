@@ -1,0 +1,167 @@
+---
+layout: default
+theme: dark
+
+
+preheader-text: We’ve got the perfect summer escape for you
+subject-line: "Discover the secret to luxury Mediterranean breaks"
+campaign-link: "#campaign-link"
+main-button-label: Discover more
+
+
+objects:
+
+  intro:
+    - title: We’ve got the perfect summer escape for you
+      subtitle: JOIN TODAY TO FIND A SUMPTUOUS BREAK IN THE SUN – WITHOUT BREAKING THE BANK
+      image: bg.jpg
+      image-title: title.png
+      button: true
+      link:
+      content-rows:
+        - content: When holiday season beckons, the glorious Mediterranean never fails to hit the spot. Miles of beaches, beautiful old villages and heavenly local dishes – not to mention sumptuous hotels – conspire to make every break linger in the mind long after you come home.
+        - content: Which is why here at Secret Escapes we hand-pick the very best travel deals to make sure you can enjoy a European summer holiday in unforgettable luxury – without spending a fortune.
+
+
+  typography-intro:
+    - title: Typography
+      content-rows:
+        - content: All possible typography styles here to see how they interact with one another
+
+
+  destinations-intro:
+    - title: Incredible destinations
+      content-rows:
+        - content: Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+        - content: Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+
+
+  destinations:
+    - content-rows:
+        - image: mallorca.jpg
+        - image: mallorca.jpg
+        - image: mallorca.jpg
+        - image: mallorca.jpg
+
+
+  offers-intro:
+    - title: Very best offers
+
+
+  testimonials-intro:
+    - title: Testimonials
+
+
+  process-intro:
+    - image: bg.jpg
+      banner-title: WHAT ARE YOU WAITING FOR?
+
+
+  proof-intro:
+    - title: We’re not like other luxury travel companies…
+
+
+---
+
+
+<!-- INTRO -->
+{% for object in page.objects["intro"] %}
+  {% include blocks/banner.html %}
+{% endfor %}
+
+{% for object in page.objects["intro"] %}
+  {% include blocks/feature.html %}
+{% endfor %}
+
+
+
+<!-- TYPOGRAPHY -->
+{% include components/spacer.html height="30" bgcolor="ffffff" %}
+{% for object in page.objects["typography-intro"] %}
+  {% include blocks/section-intro.html bgcolor="ffffff" %}
+{% endfor %}
+
+{% include components/title.html title-style="h1" title="H1 Title" bgcolor="f2f2f2" %}
+{% include components/title.html title-style="h2" title="H2 Title" %}
+{% include components/title.html title-style="h3" title="H3 Title" %}
+{% include components/title.html title-style="h4" title="H4 Title" %}
+{% include components/title.html title-style="h5" title="H5 Title" %}
+{% include components/title.html title-style="h6" title="H6 Title" %}
+
+{% include components/spacer.html height="30" bgcolor="ffffff" %}
+
+
+
+<!-- DESTINATIONS -->
+{% include components/spacer.html height="30" %}
+{% for object in page.objects["destinations-intro"] %}
+  {% include blocks/section-intro.html %}
+{% endfor %}
+
+{% assign destinations = site.data.destinations %}
+{% for object in destinations limit:2 %}
+  {% include blocks/alternating-content.html align="left" height="240" title-style="h3" button-style="subtle" paragraph-style="small" %}
+{% endfor %}
+
+{% for object in destinations limit:2 %}
+  {% include blocks/full-width.html align="left" %}
+{% endfor %}
+
+{% for object in destinations limit:2 %}
+  {% include blocks/two-column.html align="left" gutter="10" %}
+{% endfor %}
+
+{% for object in page.objects["destinations"] %}
+  {% include blocks/image-grid.html %}
+{% endfor %}
+
+{% include includes/button.html button-label="Explore" %}
+
+
+
+<!-- OFFERS -->
+{% include components/spacer.html height="30" bgcolor="ffffff" %}
+{% for object in page.objects["offers-intro"] %}
+  {% include blocks/section-intro.html bgcolor="ffffff" %}
+{% endfor %}
+
+{% assign offers = site.data.offers %}
+{% for object in offers limit:3 %}
+  {% include offer/full-width.html height="240" bgcolor="ffffff" boxcolor="f2f2f2" %}
+{% endfor %}
+
+{% include includes/button.html button-label="View all offers" bgcolor="ffffff" %}
+
+
+
+<!-- TESTIMONIALS -->
+{% include components/spacer.html height="30" %}
+{% for object in page.objects["testimonials-intro"] %}
+  {% include blocks/section-intro.html %}
+{% endfor %}
+
+{% assign testimonials = site.data.testimonials %}
+{% for object in testimonials %}
+  {% include blocks/testimonial.html height="240" %}
+{% endfor %}
+
+
+
+<!-- PROCESS -->
+{% include components/spacer.html height="30" %}
+{% for object in page.objects["process-intro"] %}
+  {% include components/banner-image.html %}
+{% endfor %}
+
+
+
+<!-- SIGN OFF + PROOF -->
+{% include components/spacer.html height="3" bgcolor="ff8c00" %}
+{% include components/spacer.html height="30" bgcolor="1a1a1a" %}
+
+{% for object in page.objects["proof-intro"] %}
+  {% include blocks/section-intro.html bgcolor="1a1a1a" theme="dark" %}
+{% endfor %}
+
+{% include groups/sign-off--proof.html %}
+
