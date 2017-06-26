@@ -30,14 +30,18 @@
               <tr>
                 <td style="padding: {{gutter | times:1.5}}px 0;">
 
-                  {% include components/title.html title-style="h3" %}
+                  {% if include.title-style %}
+                    {% include components/title.html %}
+                  {% else %}
+                    {% include components/title.html title-style="h1" %}
+                  {% endif %}
 
                   {% if object.button or object.content or object.content-rows %}
-                    {% include components/spacer.html height="5" %}
+                    {% include components/hr.html %}
                   {% endif %}
 
                   {% if object.content or object.content-rows %}
-                    {% include components/paragraphs.html paragraph-style="small" %}
+                    {% include components/paragraphs.html %}
                   {% endif %}
 
                   {% if object.button %}

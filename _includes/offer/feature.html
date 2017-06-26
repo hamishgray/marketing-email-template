@@ -23,11 +23,17 @@
             <table bgcolor="#{{ boxcolor }}" width="100%" border="0" cellspacing="0" cellpadding="0">
               <!-- COPY -->
               <tr>
-                <td style="padding: {{gutter}}px {{gutter}}px;">
-                  {% include components/title.html title-style="h2" %}
+                <td style="padding: {{gutter}}px 0;">
+
+                  {% if include.title-style %}
+                    {% include components/title.html %}
+                  {% else %}
+                    {% include components/title.html title-style="h3" %}
+                  {% endif %}
+
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <td align="left" style="padding: {{gutter | divided_by:2}}px 0 0; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
+                      <td align="left" style="padding: {{gutter | divided_by:2}}px {{gutter | times:2}}px 0; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
                         {{ object.content }}
                       </td>
                     </tr>
@@ -36,16 +42,16 @@
               </tr>
               <!-- TWO COLUMNS -->
               <tr>
-                <td valign="top" class="mobile-wrapper" style="border-top: 1px solid #{{ bordercolor }}; padding: 15px 0;">
+                <td valign="top" class="mobile-wrapper" style="border-top: 1px solid #{{ bordercolor }}; padding: {{gutter}}px 0;">
                   <!-- LEFT COLUMN -->
                   <table cellpadding="0" cellspacing="0" border="0" width="360" align="left" class="responsive-table">
                     <tr>
-                      <td align="left" style="padding: 0 15px 5px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
+                      <td align="left" style="padding: 0 {{gutter | times:2}}px {{gutter | divided_by:2}}px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
                           From <span style="color: #{{ site.data.style.color-se-orange }}; font-weight: 600;">£{{ object.price }}</span> {{ object.price-description }}
                       </td>
                     </tr>
                     <tr>
-                      <td align="left" width="300" style="padding: 0 15px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
+                      <td align="left" width="300" style="padding: 0 {{gutter | times:2}}px; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p }}">
                         *Additional information.
                       </td>
                     </tr>
@@ -53,10 +59,10 @@
                   <!-- RIGHT COLUMN -->
                   <table cellpadding="0" cellspacing="0" border="0" width="239" class="responsive-table">
                     <tr>
-                      <td style="padding: 0 15px 0 0;">
+                      <td style="padding: 0 {{gutter}}px 0 0;">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%" class="responsive-table">
                           <tr>
-                            <td width="300" style="padding: 0 0 0 20px; text-align:right" class="mobile-pad-3c mobile-center-align">
+                            <td width="300" style="padding: 0 0 0 {{gutter | times:2}}px; text-align:right" class="mobile-pad-3c mobile-center-align">
                               <a
                                 href="{% if object.link %}{{ object.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}"
                                 style="{{ site.data.style.button-large }}">

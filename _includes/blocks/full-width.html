@@ -41,7 +41,11 @@
                     <tr>
                       <td style="vertical-align:middle; padding: {{gutter}}px 0" valign="middle">
 
-                        {% include components/title.html title-style="h3" %}
+                        {% if include.title-style %}
+                          {% include components/title.html %}
+                        {% else %}
+                          {% include components/title.html title-style="h3" %}
+                        {% endif %}
 
                         {% if object.button or object.content or object.content-rows %}
                           {% include components/spacer.html height="5" %}

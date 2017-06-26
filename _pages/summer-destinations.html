@@ -1,0 +1,93 @@
+---
+layout: default
+theme: dark
+
+
+preheader-text: We’ve got the perfect summer escape for you
+subject-line: "Discover the secret to luxury Mediterranean breaks"
+campaign-link: "#campaign-link"
+main-button-label: Discover more
+
+
+objects:
+
+  intro:
+    - title: We’ve got the perfect summer escape for you
+      subtitle: JOIN TODAY TO FIND A SUMPTUOUS BREAK IN THE SUN – WITHOUT BREAKING THE BANK
+      image: bg.jpg
+      button: true
+      link:
+      content-rows:
+        - content: When holiday season beckons, the glorious Mediterranean never fails to hit the spot. Miles of beaches, beautiful old villages and heavenly local dishes – not to mention sumptuous hotels – conspire to make every break linger in the mind long after you come home.
+        - content: Which is why here at Secret Escapes we hand-pick the very best travel deals to make sure you can enjoy a European summer holiday in unforgettable luxury – without spending a fortune.
+
+
+
+  destinations-intro1:
+    - title: Two column destinations
+
+  destinations-intro2:
+    - title: Full width destinations
+
+  destinations-intro3:
+    - title: Feature destinations
+
+
+
+  proof-intro:
+    - title: We’re not like other luxury travel companies…
+
+
+---
+
+
+
+{% for object in page.objects["intro"] %}
+  {% include blocks/banner.html button-style="large" %}
+{% endfor %}
+
+
+
+{% include components/spacer.html height="15" bgcolor="f2f2f2" %}
+{% for object in page.objects["destinations-intro1"] %}
+  {% include blocks/section-intro.html %}
+{% endfor %}
+
+{% assign destinations = site.data.destinations %}
+{% for object in destinations limit:2 %}
+  {% include blocks/two-column.html align="left" %}
+{% endfor %}
+
+{% include components/spacer.html height="15" bgcolor="f2f2f2" %}
+{% for object in page.objects["destinations-intro2"] %}
+  {% include blocks/section-intro.html %}
+{% endfor %}
+
+{% assign destinations = site.data.destinations %}
+{% for object in destinations limit:2 %}
+  {% include blocks/full-width.html align="left" height="240" %}
+{% endfor %}
+
+{% include components/spacer.html height="15" bgcolor="f2f2f2" %}
+{% for object in page.objects["destinations-intro3"] %}
+  {% include blocks/section-intro.html %}
+{% endfor %}
+
+{% assign destinations = site.data.destinations %}
+{% for object in destinations limit:1 %}
+  {% include blocks/feature.html %}
+{% endfor %}
+
+{% include includes/button.html button-label="View all blockss" %}
+
+
+
+
+{% include components/spacer.html height="3" bgcolor="ff8c00" %}
+{% include components/spacer.html height="30" bgcolor="1a1a1a" %}
+
+{% for object in page.objects["proof-intro"] %}
+  {% include blocks/section-intro.html bgcolor="1a1a1a" theme="dark" title-style="h1" %}
+{% endfor %}
+
+{% include groups/sign-off--proof.html %}

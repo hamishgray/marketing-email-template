@@ -12,7 +12,12 @@
         <tr>
           <td>
 
-            {% include components/title.html title-style="h2" %}
+            {% if include.title-style %}
+              {% include components/title.html %}
+            {% else %}
+              {% include components/title.html title-style="h2" %}
+            {% endif %}
+
             {% if object.content or object.content-rows %}
               {% include components/hr.html %}
               {% include components/paragraphs.html %}

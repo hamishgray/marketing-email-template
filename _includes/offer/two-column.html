@@ -32,7 +32,11 @@
         <tr>
           <td style="background-color: #{{ boxcolor }}; padding: {{gutter | times:1.5}}px 0; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
 
-            {% include components/title.html title-style="h3" %}
+            {% if include.title-style %}
+              {% include components/title.html %}
+            {% else %}
+              {% include components/title.html title-style="h4" %}
+            {% endif %}
 
             <table align="{{align}}" width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -41,12 +45,12 @@
                 </td>
               </tr>
               <tr>
-                <td align="{{align}}" style="padding: {{gutter | divided_by:2}}px {{gutter | times:2}}px 0; color: #{{ site.data.style.color-text-paragraph }}; {{ site.data.style.text-p }}">
-                  From <span style="color: #{{ site.data.style.color-se-orange }}; font-weight: 400; font-size: 16px;">£{{ object.price }}</span> {{ object.price-description }}
+                <td align="{{align}}" style="padding: {{gutter}}px {{gutter | times:2}}px 0; color: #{{ site.data.style.color-text-paragraph }}; {{ site.data.style.text-p-small }}">
+                  From <span style="color: #{{ site.data.style.color-se-orange }}; font-weight: 600; font-size: 16px;">£{{ object.price }}</span> {{ object.price-description }}
                 </td>
               </tr>
               <tr>
-                <td align="{{align}}" style="padding: {{gutter | divided_by:2}}px {{gutter | times:2}}px 0;">
+                <td align="{{align}}" style="padding: {{gutter}}px {{gutter | times:2}}px 0;">
                   <a
                     href="{% if object.link %}{{ object.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}"
                     style="{{ site.data.style.button-subtle }}">

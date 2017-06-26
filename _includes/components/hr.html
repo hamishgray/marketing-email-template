@@ -18,7 +18,7 @@
 {% endif %}
 
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table {% if include.boxcolor %}bgcolor="#{{ include.boxcolor }}"{% endif %} width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td align="{{align}}" style="padding: 0 {{gutter | times:2}}px;">
       <table align="{{align}}" width="100" border="0" cellspacing="0" cellpadding="0" style="height:{{spacing | times:2}}px;">

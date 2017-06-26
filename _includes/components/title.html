@@ -16,6 +16,22 @@
   {% assign title-style = site.data.style.text-h1 %}
 {% endif %}
 
+{% if include.subtitle-style == "h1" %}
+  {% assign subtitle-style = site.data.style.text-h1 %}
+{% elsif include.subtitle-style == "h2" %}
+  {% assign subtitle-style = site.data.style.text-h2 %}
+{% elsif include.subtitle-style == "h3" %}
+  {% assign subtitle-style = site.data.style.text-h3 %}
+{% elsif include.subtitle-style == "h4" %}
+  {% assign subtitle-style = site.data.style.text-h4 %}
+{% elsif include.subtitle-style == "h5" %}
+  {% assign subtitle-style = site.data.style.text-h5 %}
+{% elsif include.subtitle-style == "h6" %}
+  {% assign subtitle-style = site.data.style.text-h6 %}
+{% else %}
+  {% assign subtitle-style = site.data.style.text-h4 %}
+{% endif %}
+
 {% if include.title %}
   {% assign title = include.title %}
 {% else %}
@@ -40,7 +56,7 @@
 {% if subtitle %}
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td align="{{ align }}" style="padding: 0 {{gutter | times:2}}px; color: #{{ color-text-title }}; {{ site.data.style.text-h4 }}" class="padding-copy-header">
+      <td align="{{ align }}" style="padding: 0 {{gutter | times:2}}px; color: #{{ color-text-title }}; {{ subtitle-style }}" class="padding-copy-header">
         {{ subtitle }}
       </td>
     </tr>

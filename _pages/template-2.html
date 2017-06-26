@@ -54,7 +54,7 @@ objects:
 
 
 {% for object in page.objects["destinations-intro"] %}
-  {% include blocks/section-intro.html theme="dark" bgcolor="1a1a1a" %}
+  {% include blocks/section-intro.html theme="dark" bgcolor="1a1a1a" title-style="h1" %}
 {% endfor %}
 
 {% assign destinations = site.data.destinations %}
@@ -67,18 +67,18 @@ objects:
 
 
 
-{% include components/spacer.html height="15" bgcolor="1a1a1a" %}
+{% include components/spacer.html height="30" bgcolor="222222" %}
 
 {% for object in page.objects["testimonials-intro"] %}
-  {% include blocks/section-intro.html bgcolor="1a1a1a" theme="dark" %}
+  {% include blocks/section-intro.html bgcolor="222222" theme="dark" %}
 {% endfor %}
 
 {% assign testimonials = site.data.testimonials %}
 {% for object in testimonials %}
-  {% include blocks/testimonial.html height="240" bgcolor="1a1a1a" boxcolor="333333" theme="dark" %}
+  {% include blocks/testimonial.html height="240" bgcolor="222222" boxcolor="333333" theme="dark" %}
 {% endfor %}
 
-{% include includes/button.html button-label="Sign up now" bgcolor="1a1a1a" %}
+{% include includes/button.html button-label="Sign up now" bgcolor="222222" %}
 
 
 
@@ -89,9 +89,6 @@ objects:
   {% include blocks/section-intro.html bgcolor="1a1a1a" theme="dark" %}
 {% endfor %}
 
-{% assign proof = site.data.proof %}
-{% for object in proof %}
-  {% include blocks/two-column.html bgcolor="1a1a1a" boxcolor="333333" theme="dark" %}
-{% endfor %}
+{% include groups/sign-off--proof.html %}
 
 
