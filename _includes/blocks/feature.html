@@ -44,7 +44,9 @@
                     {% include components/paragraphs.html %}
                   {% endif %}
 
-                  {% if object.button %}
+                  {% if include.button-style %}
+                    {% include components/button.html %}
+                  {% else %}
                     {% include components/button.html style="small" %}
                   {% endif %}
 

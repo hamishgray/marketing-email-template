@@ -6,7 +6,7 @@ theme: dark
 preheader-text: We’ve got the perfect summer escape for you
 subject-line: "Discover the secret to luxury Mediterranean breaks"
 campaign-link: "#campaign-link"
-main-button-label: Discover more
+main-button-label: Sign up now
 
 
 objects:
@@ -17,6 +17,7 @@ objects:
       image: bg.jpg
       image-title: title.png
       button: true
+      button-label: Discover more
       link:
       content-rows:
         - content: When holiday season beckons, the glorious Mediterranean never fails to hit the spot. Miles of beaches, beautiful old villages and heavenly local dishes – not to mention sumptuous hotels – conspire to make every break linger in the mind long after you come home.
@@ -69,7 +70,7 @@ objects:
 
 {% assign offers = site.data.offers %}
 {% for object in offers limit:4 %}
-  {% include offer/full-width.html align="left" gutter="10" %}
+  {% include offer/full-width.html height="215" align="left" gutter="10" %}
 {% endfor %}
 
 {% include includes/button.html button-label="View all offers" %}

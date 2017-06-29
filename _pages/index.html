@@ -88,12 +88,12 @@ objects:
 {% include components/title.html title-style="h5" title="H5 Title" %}
 {% include components/title.html title-style="h6" title="H6 Title" %}
 
-{% include components/spacer.html height="30" bgcolor="ffffff" %}
+{% include components/spacer.html height="30" %}
 
 
 
 <!-- DESTINATIONS -->
-{% include components/spacer.html height="30" %}
+{% include components/spacer.html height="30" bgcolor="f2f2f2" %}
 {% for object in page.objects["destinations-intro"] %}
   {% include blocks/section-intro.html %}
 {% endfor %}
@@ -104,7 +104,7 @@ objects:
 {% endfor %}
 
 {% for object in destinations limit:2 %}
-  {% include blocks/full-width.html align="left" %}
+  {% include blocks/full-width.html height="240" align="left" %}
 {% endfor %}
 
 {% for object in destinations limit:2 %}
@@ -127,7 +127,7 @@ objects:
 
 {% assign offers = site.data.offers %}
 {% for object in offers limit:3 %}
-  {% include offer/full-width.html height="240" bgcolor="ffffff" boxcolor="f2f2f2" %}
+  {% include offer/full-width.html height="220" bgcolor="ffffff" boxcolor="f2f2f2" %}
 {% endfor %}
 
 {% include includes/button.html button-label="View all offers" bgcolor="ffffff" %}
@@ -135,7 +135,7 @@ objects:
 
 
 <!-- TESTIMONIALS -->
-{% include components/spacer.html height="30" %}
+{% include components/spacer.html height="30" bgcolor="f2f2f2" %}
 {% for object in page.objects["testimonials-intro"] %}
   {% include blocks/section-intro.html %}
 {% endfor %}
@@ -148,7 +148,6 @@ objects:
 
 
 <!-- PROCESS -->
-{% include components/spacer.html height="30" %}
 {% for object in page.objects["process-intro"] %}
   {% include components/banner-image.html %}
 {% endfor %}

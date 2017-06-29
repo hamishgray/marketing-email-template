@@ -1,7 +1,4 @@
 
-##  =========================
-##  PAMPERING OFFERS
-##  =========================
 
   - title: The Cornwall Hotel, Spa & Estate
     category: pampering
@@ -9,7 +6,7 @@
     content: A spa break at a luxury Cornish retreat, with a state-of-the-art wellness centre and infinity pool
     price: 105
     price-description: per room per night
-    saved: 105
+    saved: 45
     link: https://www.secretescapes.com/the-cornwall-hotel-spa-and-estate-st-austell-cornwall/sale?utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_060617
 
   - title: Alexander House Hotel & Utopia Spa
@@ -38,11 +35,6 @@
     price-description: per room per night
     saved: 53
     link: https://www.secretescapes.com/donnington-valley-hotel-and-spa-newbury-berkshire/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
-
-
-##  =========================
-##  SEASIDE OFFERS
-##  =========================
 
   - title: The Headland Hotel & Cottages
     category: seaside
@@ -80,11 +72,6 @@
     saved: 50
     link: https://www.secretescapes.com/melville-hall-hotel-and-spa-sandown-isle-of-wight/sale?utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
 
-
-
-##  =========================
-##  POSH PADS OFFERS
-##  =========================
 
   - title: Ellenborough Park
     category: posh-pads
@@ -131,10 +118,6 @@
     saved: 45
     link: https://www.secretescapes.com/sanderson-fitzrovia-london/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
 
-
-##  =========================
-##  UNIQUE OFFERS
-##  =========================
 
   - title: East Thorne Yurts
     category: unique

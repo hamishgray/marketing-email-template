@@ -42,12 +42,12 @@
                         {% if include.title-style %}
                           {% include components/title.html %}
                         {% else %}
-                          {% include components/title.html title-style="h4" %}
+                          {% include components/title.html title-style="h5" %}
                         {% endif %}
 
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                           <tr>
-                            <td align="{{align}}" width="300" style="padding: {{gutter}}px {{gutter | times:2}}px 0; color: #{{ color-text-paragraph }}; {{ site.data.style.text-h5 }}">
+                            <td align="{{align}}" width="300" style="padding: {{gutter}}px {{gutter | times:2}}px 0; color: #{{ color-text-paragraph }}; {{ site.data.style.text-h6 }}">
                               {{ object.location }}
                             </td>
                           </tr>

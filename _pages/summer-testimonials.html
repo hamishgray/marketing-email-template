@@ -24,22 +24,13 @@ objects:
 
 
 
-  destinations-intro1:
-    - title: What's hot right now...
-      content: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur.
-
-  destinations-intro2:
+  destinations-intro:
     - title: Our favourite summer spots
 
 
 
   testimonials-intro:
     - title: Hear from our happy customers
-
-
-
-  proof-intro:
-    - title: We’re not like other luxury travel companies…
 
 
 ---
@@ -50,51 +41,35 @@ objects:
   {% include blocks/banner.html button-style="large" bgcolor="1a1a1a" boxcolor="1a1a1a" theme="dark" %}
 {% endfor %}
 
-
-
-{% include components/spacer.html height="30" bgcolor="444444" %}
-{% for object in page.objects["destinations-intro1"] %}
-  {% include blocks/section-intro.html bgcolor="444444" theme="dark" title-style="h1" %}
+{% for object in site.data.testimonials limit:1 %}
+  {% include blocks/testimonial.html boxcolor="333333" bgcolor="1a1a1a" theme="dark" %}
 {% endfor %}
 
 
 
-{% assign destinations = site.data.destinations %}
-{% for object in destinations limit:1 %}
-  {% include blocks/feature.html align="center" title-style="h3" button-style="large" paragraph-style="lead" boxcolor="333333" bgcolor="444444" theme="dark" %}
-{% endfor %}
-
-
-
-{% include components/spacer.html height="30" bgcolor="333333" %}
-{% for object in page.objects["destinations-intro2"] %}
-  {% include blocks/section-intro.html boxcolor="444444" bgcolor="333333" theme="dark" title-style="h1" %}
+{% include components/spacer.html height="30" bgcolor="2a2a2a" %}
+{% for object in page.objects["destinations-intro"] %}
+  {% include blocks/section-intro.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" title-style="h1" %}
 {% endfor %}
 
 
 
 {% assign destinations = site.data.destinations %}
 {% for object in destinations limit:4 %}
-  {% include blocks/full-width.html align="left" height="240" boxcolor="444444" bgcolor="333333" theme="dark" %}
+  {% include blocks/full-width.html align="left" height="240" boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
 {% endfor %}
 
 
 
 {% for object in page.objects["testimonials-intro"] %}
-  {% include blocks/section-intro.html boxcolor="444444" bgcolor="333333" theme="dark" title-style="h1" %}
+  {% include blocks/section-intro.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" title-style="h1" %}
 {% endfor %}
 
 {% for object in site.data.testimonials %}
-  {% include blocks/testimonial.html boxcolor="444444" bgcolor="333333" theme="dark" %}
+  {% include blocks/testimonial.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
 {% endfor %}
-
 
 
 
 {% include components/spacer.html height="30" bgcolor="1a1a1a" %}
-
-{% for object in page.objects["proof-intro"] %}
-  {% include blocks/section-intro.html bgcolor="1a1a1a" theme="dark" title-style="h1" %}
-{% endfor %}
-
-{% include groups/sign-off--proof.html %}
+{% include sign-off.html %}
