@@ -27,10 +27,10 @@ gutter: 15
 text-banner: "font-size: 48px; line-height: 50px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 200; text-transform:uppercase; letter-spacing:6px;"
 
 text-h1: "font-size: 28px; line-height: 32px; font-family: Georgia, serif; font-weight: 200;"
-text-h2: "font-size: 22px; line-height: 26px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 300; text-transform: uppercase; letter-spacing: 2px;"
+text-h2: "font-size: 22px; line-height: 26px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400; text-transform: uppercase; letter-spacing: 2px;"
 text-h3: "font-size: 20px; line-height: 22px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600;"
 text-h4: "font-size: 16px; line-height: 22px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400; text-transform: uppercase; letter-spacing: 2px;"
-text-h5: "font-size: 16px; line-height: 17px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600;"
+text-h5: "font-size: 16px; line-height: 22px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600;"
 text-h6: "font-size: 13px; line-height: 16px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;"
 
 text-p-lead: "font-size: 17px; line-height: 27px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-weight: 400;"

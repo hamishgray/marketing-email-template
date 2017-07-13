@@ -1,0 +1,114 @@
+---
+layout: proof
+theme: dark
+
+
+preheader-text: We’ve got the perfect summer escape for you
+subject-line: "Discover the secret to luxury Mediterranean breaks"
+campaign-link: "#campaign-link"
+main-button-label: Discover more
+
+
+objects:
+
+  intro:
+    - title:
+      subtitle: JOIN TODAY TO FIND A SUMPTUOUS BREAK IN THE SUN – WITHOUT BREAKING THE BANK
+      image: banner.jpg
+      banner-title: We’ve got the perfect summer escape for you
+      banner-button: true
+      banner-padding: 60
+      button: true
+      link:
+      content-rows:
+        - content: When holiday season beckons, the glorious Mediterranean never fails to hit the spot. Miles of beaches, beautiful old villages and heavenly local dishes – not to mention sumptuous hotels – conspire to make every break linger in the mind long after you come home.
+        - content: Which is why here at Secret Escapes we hand-pick the very best travel deals to make sure you can enjoy a European summer holiday in unforgettable luxury – without spending a fortune.
+
+
+
+  featured-destinations-intro:
+    - title: What's hot right now...
+      content: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur.
+
+  destinations-intro:
+    - title: Our favourite summer spots
+
+
+
+  testimonials-intro:
+    - title: Testimonials
+
+
+---
+
+
+
+{% for object in page.objects["intro"] %}
+  {% include blocks/banner.html button-style="large" bgcolor="1a1a1a" boxcolor="1a1a1a" theme="dark" %}
+{% endfor %}
+
+
+
+
+
+{% include components/spacer.html height="30" bgcolor="2a2a2a" %}
+{% for object in page.objects["featured-destinations-intro"] %}
+  {% include blocks/section-intro.html bgcolor="2a2a2a" theme="dark" title-style="h1" %}
+{% endfor %}
+
+{% assign featured-destinations = site.data.destinations | where:"featured","true" %}
+{% for object in featured-destinations %}
+  {% include blocks/feature.html align="center" title-style="h2" button-style="large" paragraph-style="lead" boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+
+
+
+
+{% for object in page.objects["destinations-intro"] %}
+  {% include blocks/section-intro.html bgcolor="2a2a2a" theme="dark" title-style="h1" %}
+{% endfor %}
+
+{% assign destinations = site.data.destinations | where:"featured","false" %}
+{% for object in destinations %}
+  {% include blocks/full-width.html align="left" height="240" boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+
+
+
+
+{% for object in page.objects["destinations-intro"] %}
+  {% include blocks/section-intro.html bgcolor="2a2a2a" theme="dark" title-style="h1" %}
+{% endfor %}
+
+{% assign destinations = site.data.destinations | where:"featured","false" %}
+{% for object in destinations %}
+  {% include blocks/two-column.html align="left" height="240" boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+
+
+
+
+{% for object in page.objects["testimonials-intro"] %}
+  {% include blocks/section-intro.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" title-style="h1" %}
+{% endfor %}
+
+{% assign testimonials = site.data.testimonials | where:"featured","false" %}
+{% for object in testimonials %}
+  {% include blocks/testimonial-two-column.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+
+
+
+
+{% for object in page.objects["testimonials-intro"] %}
+  {% include blocks/section-intro.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" title-style="h1" %}
+{% endfor %}
+
+{% assign testimonials = site.data.testimonials | where:"featured","false" %}
+{% for object in testimonials %}
+  {% include blocks/testimonial.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}

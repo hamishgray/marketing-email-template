@@ -1,0 +1,125 @@
+---
+layout: proof
+theme: dark
+
+
+preheader-text: We’ve got the perfect summer escape for you
+subject-line: "Discover the secret to luxury Mediterranean breaks"
+campaign-link: "#campaign-link"
+main-button-label: Sign up now
+
+
+objects:
+
+  intro:
+    - title:
+      subtitle: Join today to find a sumptuous break in the sun without breaking the bank
+      image: banner.jpg
+      banner-title: Luxury holidays, without the luxury price tag
+      banner-button: true
+      banner-padding: 60
+      button: true
+      button-label: Discover more
+      link:
+      content-rows:
+        - content: When holiday season beckons, the glorious Mediterranean never fails to hit the spot. Miles of beaches, beautiful old villages and heavenly local dishes – not to mention sumptuous hotels – conspire to make every break linger in the mind long after you come home.
+        - content: Which is why here at Secret Escapes we hand-pick the very best travel deals to make sure you can enjoy a European summer holiday in unforgettable luxury – without spending a fortune.
+
+
+
+  editors-pick-intro:
+    - title: Editor's pick
+      content: A stylish small inn on the edge of the South Downs with awards from the fashion press, infinity pools and chic interiors on the ultimate bohemian Balinese holiday, plus beautiful villas in Costa Rica
+
+  offers-intro:
+    - title: Other offers
+
+
+
+  testimonials-intro:
+    - title: Testimonials
+
+
+
+---
+
+
+
+{% for object in page.objects["intro"] %}
+  {% include blocks/banner.html button-style="large" %}
+{% endfor %}
+
+
+
+
+{% include components/spacer.html height="15" bgcolor="f2f2f2" %}
+
+{% for object in page.objects["editors-pick-intro"] %}
+  {% include blocks/section-intro.html title-style="h1" paragraph-style="lead" %}
+{% endfor %}
+
+{% assign featured-offer = site.data.offers | where:"featured","true" %}
+{% for object in featured-offer %}
+  {% include offer/feature.html align="left" %}
+{% endfor %}
+
+
+
+
+{% for object in page.objects["offers-intro"] %}
+  {% include blocks/section-intro.html title-style="h1" paragraph-style="lead" %}
+{% endfor %}
+
+{% assign offers = site.data.offers | where:"featured","false" %}
+{% for object in offers %}
+  {% include offer/full-width.html align="left" %}
+{% endfor %}
+
+
+
+
+{% for object in page.objects["offers-intro"] %}
+  {% include blocks/section-intro.html title-style="h1" paragraph-style="lead" %}
+{% endfor %}
+
+{% assign offers = site.data.offers | where:"featured","false" %}
+{% for object in offers %}
+  {% include offer/two-column.html align="left" %}
+{% endfor %}
+
+
+
+{% include components/spacer.html height="5" bgcolor="f2f2f2" %}
+{% include includes/button.html button-label="View all offers" %}
+
+
+
+
+
+{% for object in page.objects["testimonials-intro"] %}
+  {% include blocks/section-intro.html title-style="h1" %}
+{% endfor %}
+
+{% assign testimonials = site.data.testimonials | where:"featured","false" %}
+{% for object in testimonials %}
+  {% include blocks/testimonial-two-column.html %}
+{% endfor %}
+
+
+
+
+
+{% for object in page.objects["testimonials-intro"] %}
+  {% include blocks/section-intro.html title-style="h1" %}
+{% endfor %}
+
+{% assign testimonials = site.data.testimonials | where:"featured","false" %}
+{% for object in testimonials %}
+  {% include blocks/testimonial.html %}
+{% endfor %}
+
+
+
+
+
+{% include groups/sign-off--introducing.html theme="dark" %}

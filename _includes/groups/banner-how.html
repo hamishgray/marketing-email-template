@@ -1,0 +1,122 @@
+
+{% include components/_settings.html %}
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="300">
+  <tr>
+    <td align="center" background="img/content/{{ object.image }}" bgcolor="#{{ site.data.style.color-se-grey }}" valign="middle" style="vertical-align: middle; background-position: center; -webkit-background-size: cover; background-size: cover; ">
+      <!--[if gte mso 9]>
+      <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;height:300px;">
+        <v:fill type="frame" src="img/content/{{ object.image }}" color="#{{ site.data.style.color-se-grey }}" />
+        <v:textbox inset="0,0,0,0">
+      <![endif]-->
+      <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table" height="350">
+        <tr>
+          <td style="padding: {{ banner-padding }}px {{gutter}}px;"><!-- top & bottom padding is total height - image height fallback is needed for clients that dont support vertical align -->
+            <table align="center" cellspacing="0" cellpadding="0" border="0" width="570" class="responsive-table">
+              <tr>
+                <td valign="middle" style="vertical-align:middle;" align="center">
+
+                  {% include components/title.html title-style="text-banner" theme="dark" %}
+
+                  {% if object.title or object.subtitle and object.content or object.content-rows %}
+                    {% include components/spacer.html height="15" %}
+                  {% endif %}
+
+                  {% include components/paragraphs.html paragraph-style="lead" %}
+
+
+
+                  {% include components/spacer.html height="30" %}
+
+
+
+                  {% for object in object.items %}
+
+                    {% assign hrcolor = site.data.style.color-hrcolor %}
+                    {% assign color-text-title = site.data.style.color-text-title %}
+                    {% assign color-text-paragraph = site.data.style.color-text-paragraph %}
+                    {% assign gutter = '10' %}
+                    {% assign align = 'center' %}
+
+                    {% assign loopindex = forloop.index | modulo: 2 %}
+                    {% if forloop.first or loopindex == 1 %}
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                          <td align="center" style="padding: 0 {{gutter}}px;">
+                            <!-- FIRST ROW -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+                              <tr>
+                                <td>
+
+                    {% endif %}
+
+                    <!-- FIRST COLUMN -->
+                    <table {% if loopindex == 1 %}align="left"{% else %}align="right"{% endif %} border="0" cellspacing="0" cellpadding="0" class="responsive-table" width="285">
+                      <tr>
+                        <td style="padding-bottom: {{gutter | times:2}}px;">
+                          <!-- CONTENT START -->
+                          <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td height="230" style="background-color: #{{ boxcolor }}; padding: {{gutter | times:2}}px 0; border-radius: 4px;">
+
+                                {% if include.title-style %}
+                                  {% include components/title.html %}
+                                {% else %}
+                                  {% include components/title.html title-style="h5" %}
+                                {% endif %}
+
+                                {% if object.button or object.content or object.content-rows %}
+                                  {% include components/spacer.html height="5" %}
+                                {% endif %}
+
+                                {% if object.content or object.content-rows %}
+                                  {% include components/paragraphs.html paragraph-style="small" %}
+                                {% endif %}
+
+                                {% if object.button %}
+                                  {% include components/button.html style="small" %}
+                                {% endif %}
+
+                              </td>
+                            </tr>
+                          </table>
+                          <!-- CONTENT END -->
+
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- FIRST COLUMN END -->
+
+
+
+                    {% if forloop.last or loopindex != 1 %}
+
+                              </td>
+                            </tr>
+                          </table>
+                          <!-- FIRST ROW END -->
+                        </td>
+                      </tr>
+                    </table>
+
+                    {% endif %}
+
+                  {% endfor %}
+
+
+
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!--[if gte mso 9]>
+          </v:textbox>
+        </v:rect>
+        <![endif]-->
+    </td>
+  </tr>
+</table>

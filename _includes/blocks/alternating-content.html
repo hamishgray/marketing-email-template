@@ -1,5 +1,19 @@
 
+
+
+{% if forloop.first %}
+<!--
+ALTERNATING SECTIONS
+The text and image halves should swap sides. This is
+done with the align attribute on the columns.
+-->
+{% endif %}
+
+
+
 {% include components/_settings.html %}
+
+{% assign gutter = '10' %}
 
 {% if include.height %}
   {% assign height = include.height %}
@@ -7,19 +21,18 @@
   {% assign height = "300" %}
 {% endif %}
 
-<!-- alternating-content.html -->
 {% assign loopindex = forloop.index | modulo: 2 %}
-<table bgcolor="#{{ bgcolor }}" border="0" cellpadding="0" cellspacing="0" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#{{ bgcolor }}">
   <tr>
     <td align="center" style="padding: 0 {{gutter}}px {% if forloop.last %}{{gutter | times:2}}px{% else %}0{% endif %};">
       <table bgcolor="#{{ boxcolor }}"  border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table" style="{% if forloop.first %}border-top-left-radius: 4px;border-top-right-radius: 4px;{% elsif forloop.last %}border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;{% endif %}">
         <tr>
           <td class="mobile-wrapper">
-            <!-- TWO COLUMNS -->
+            <!-- COLUMN WRAPPER -->
             <table align="center" cellspacing="0" cellpadding="0" border="0" width="600" class="responsive-table">
               <tr>
                 <td class="mobile-wrapper" valign="middle" style="vertical-align:middle;">
-                  <!-- LEFT COLUMN -->
+                  <!-- FIRST COLUMN -->
                   <table cellpadding="0" cellspacing="0" border="0" width="50%" class="responsive-table" style="height: {{ height }}px;" align="{% if forloop.first or loopindex == 1 %}left{% else %}right{% endif %}">
                     <tr>
                       <td style="padding: 0; vertical-align:middle;" valign="middle">
@@ -36,15 +49,28 @@
                       </td>
                     </tr>
                   </table>
-                  <!-- RIGHT COLUMN -->
+                  <!-- SECOND COLUMN -->
                   <table cellpadding="0" cellspacing="0" border="0" width="49.999999%" class="responsive-table" style="height: {{ height }}px;" align="{% if forloop.first or loopindex == 1 %}right{% else %}left{% endif %}">
                     <tr>
-                      <td align=left style="padding: {{gutter}}px 0 {{gutter | divided_by:2}}px; vertical-align:middle;" valign="middle">
+                      <td align=left style="padding: {{gutter | times:2}}px 0; vertical-align:middle;" valign="middle">
 
-                        {% include components/title.html %}
-                        {% include components/hr.html %}
-                        {% include components/paragraphs.html %}
-                        {% include components/button.html %}
+                        {% if include.title-style %}
+                          {% include components/title.html %}
+                        {% else %}
+                          {% include components/title.html title-style="h3" %}
+                        {% endif %}
+
+                        {% if object.button or object.content or object.content-rows %}
+                          {% include components/hr.html %}
+                        {% endif %}
+
+                        {% if object.content or object.content-rows %}
+                          {% include components/paragraphs.html paragraph-style="small" %}
+                        {% endif %}
+
+                        {% if object.button %}
+                          {% include components/button.html style="small" %}
+                        {% endif %}
 
                       </td>
                     </tr>

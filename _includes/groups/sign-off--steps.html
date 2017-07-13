@@ -1,0 +1,33 @@
+
+{% include components/_settings.html %}
+
+
+
+{% include components/spacer.html height="45" bgcolor="1a1a1a" %}
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td bgcolor="#1a1a1a" style="padding-bottom: {{gutter | times:2}}px;" align="center">
+      <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+        <tr>
+          <td>
+
+            {% include components/title.html title="How to get discounts on LUXURY HOTELS?" title-style="h1" align="center"  theme="dark" %}
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+{% assign steps = site.data.steps %}
+{% for object in steps %}
+  {% include blocks/three-column.html bgcolor="1a1a1a" boxcolor="1a1a1a" theme="dark" %}
+{% endfor %}
+
+
+{% include components/hr.html bgcolor="1a1a1a" boxcolor="1a1a1a" theme="dark" %}
+
+
+{% include sign-off.html %}

@@ -1,0 +1,13 @@
+
+{% include components/_settings.html %}
+
+
+
+{% assign how = site.data.how %}
+{% for object in how %}
+  {% include groups/banner-how.html %}
+{% endfor %}
+
+
+
+{% include sign-off.html %}

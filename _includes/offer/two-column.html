@@ -1,31 +1,38 @@
 
+
+
+{% if forloop.first %}
+<!--
+OFFER / TWO COLUMNS
+Two column layout that rearranges to single column for mobile.
+-->
+{% endif %}
+
+
+
 {% include components/_settings.html %}
 
+{% assign gutter = '10' %}
 
-
-<!-- offer/two-column.html -->
 {% assign loopindex = forloop.index | modulo: 2 %}
 {% if forloop.first or loopindex == 1 %}
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
-    <tr>
-      <td bgcolor="#{{ bgcolor }}" align="center" style="padding: 0 {{gutter}}px;">
-        <!-- FIRST ROW -->
-        <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
-          <tr>
-            <td>
+  <tr>
+    <td bgcolor="#{{ bgcolor }}" align="center" style="padding: 0 {{gutter}}px;">
+      <table border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table">
+        <tr>
+          <td>
 
 {% endif %}
 
-<!-- FIRST COLUMN -->
-<table {% if loopindex == 1 %}align="left"{% else %}align="right"{% endif %} border="0" cellspacing="0" cellpadding="0" class="responsive-table" width="285">
+<table align="{% if loopindex == 1 %}left{% else %}right{% endif %}" border="0" cellspacing="0" cellpadding="0" class="responsive-table" width="285">
   <tr>
     <td style="padding-bottom: {{gutter | times:2}}px;">
-      <!-- CONTENT START -->
       <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td>
             <a href="{% if object.link %}{{ object.link }}{{site.se-offer-tracking}}{% else %}{{ page.campaign-link }}{% endif %}">
-              <img src="img/offers/{{ object.title | slugify }}.jpg" border="0" alt="" width="285" height="190" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max border-reset" />
+              <img src="img/content/{{ object.image }}" border="0" alt="" width="285" height="190" style="display: block; border-top-left-radius: 4px; border-top-right-radius: 4px;" class="img-max" />
             </a>
           </td>
         </tr>
@@ -45,10 +52,11 @@
                 </td>
               </tr>
               <tr>
-                <td align="{{align}}" style="padding: {{gutter}}px {{gutter | times:2}}px 0; color: #{{ site.data.style.color-text-paragraph }}; {{ site.data.style.text-p-small }}">
-                  From <span style="color: #{{ site.data.style.color-se-orange }}; font-weight: 600; font-size: 16px;">£{{ object.price }}</span> {{ object.price-description }}
+                <td align="{{align}}" style="padding: {{gutter | divided_by:2}}px {{gutter | times:2}}px 0; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p-lead }}">
+                  Save up to <span style="color: #{{ site.data.style.color-se-orange }}; font-weight: 600; font-size: 20px;">{{ object.saved }}%</span>
                 </td>
               </tr>
+              {% if object.button %}
               <tr>
                 <td align="{{align}}" style="padding: {{gutter}}px {{gutter | times:2}}px 0;">
                   <a
@@ -58,16 +66,15 @@
                   </a>
                 </td>
               </tr>
+              {% endif %}
             </table>
           </td>
         </tr>
       </table>
-      <!-- CONTENT END -->
 
     </td>
   </tr>
 </table>
-<!-- FIRST COLUMN END -->
 
 
 
@@ -76,7 +83,6 @@
           </td>
         </tr>
       </table>
-      <!-- FIRST ROW END -->
     </td>
   </tr>
 </table>

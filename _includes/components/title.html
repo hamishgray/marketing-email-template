@@ -1,5 +1,4 @@
 
-<!-- TITLE STYLES -->
 {% if include.title-style == "h1" %}
   {% assign title-style = site.data.style.text-h1 %}
 {% elsif include.title-style == "h2" %}
@@ -12,6 +11,8 @@
   {% assign title-style = site.data.style.text-h5 %}
 {% elsif include.title-style == "h6" %}
   {% assign title-style = site.data.style.text-h6 %}
+{% elsif include.title-style == "text-banner" %}
+  {% assign title-style = site.data.style.text-banner %}
 {% else %}
   {% assign title-style = site.data.style.text-h1 %}
 {% endif %}
@@ -44,14 +45,22 @@
   {% assign subtitle = object.subtitle %}
 {% endif %}
 
+{% if include.align %}
+  {% assign align = include.align %}
+{% elsif object.align %}
+  {% assign align = object.align %}
+{% endif %}
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td align="{{ align }}" style="padding: 0 {{gutter | times:2}}px {% if subtitle %}{{gutter | divided_by:2}}px{% endif %}; color: #{{ color-text-title }}; {{ title-style }}" class="padding-copy-header">
-      {{ title }}
-    </td>
-  </tr>
-</table>
+
+{% if title %}
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td align="{{ align }}" style="padding: 0 {{gutter | times:2}}px {% if subtitle %}{{gutter | divided_by:2}}px{% endif %}; color: #{{ color-text-title }}; {{ title-style }}" class="title-{% if include.title-style %}{{ include.title-style }}{% else %}h1{% endif %}">
+        {{ title }}
+      </td>
+    </tr>
+  </table>
+{% endif %}
 
 {% if subtitle %}
   <table width="100%" border="0" cellspacing="0" cellpadding="0">

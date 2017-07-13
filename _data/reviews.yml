@@ -1,0 +1,14 @@
+
+  - title: Deutschlands Beste Online-Portale 2017
+    featured: true
+    from: n-tv
+    content-rows:
+      - content: "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+      - content: "Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+
+  - title: Hamish Gray
+    featured: false
+    from: n-tv
+    content-rows:
+      - content: "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+      - content: "Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."

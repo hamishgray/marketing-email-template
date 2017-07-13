@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: proof
 theme: dark
 
 
@@ -12,11 +12,14 @@ main-button-label: Discover more
 objects:
 
   intro:
-    - title: We’ve got the perfect summer escape for you
+    - title:
       subtitle: JOIN TODAY TO FIND A SUMPTUOUS BREAK IN THE SUN – WITHOUT BREAKING THE BANK
-      image: bg.jpg
-      image-title: title.png
+      image: banner.jpg
+      banner-title: Example banner text
+      banner-button: true
+      banner-padding: 60
       button: true
+      button-label: label
       link:
       content-rows:
         - content: When holiday season beckons, the glorious Mediterranean never fails to hit the spot. Miles of beaches, beautiful old villages and heavenly local dishes – not to mention sumptuous hotels – conspire to make every break linger in the mind long after you come home.
@@ -53,20 +56,16 @@ objects:
 
 
   process-intro:
-    - image: bg.jpg
+    - image: banner.jpg
       banner-title: WHAT ARE YOU WAITING FOR?
-
-
-  proof-intro:
-    - title: We’re not like other luxury travel companies…
 
 
 ---
 
 
-<!-- INTRO -->
+
 {% for object in page.objects["intro"] %}
-  {% include blocks/banner.html %}
+  {% include blocks/banner.html button-style="large" %}
 {% endfor %}
 
 {% for object in page.objects["intro"] %}
@@ -75,7 +74,6 @@ objects:
 
 
 
-<!-- TYPOGRAPHY -->
 {% include components/spacer.html height="30" bgcolor="ffffff" %}
 {% for object in page.objects["typography-intro"] %}
   {% include blocks/section-intro.html bgcolor="ffffff" %}
@@ -92,7 +90,6 @@ objects:
 
 
 
-<!-- DESTINATIONS -->
 {% include components/spacer.html height="30" bgcolor="f2f2f2" %}
 {% for object in page.objects["destinations-intro"] %}
   {% include blocks/section-intro.html %}
@@ -111,15 +108,10 @@ objects:
   {% include blocks/two-column.html align="left" gutter="10" %}
 {% endfor %}
 
-{% for object in page.objects["destinations"] %}
-  {% include blocks/image-grid.html %}
-{% endfor %}
-
 {% include includes/button.html button-label="Explore" %}
 
 
 
-<!-- OFFERS -->
 {% include components/spacer.html height="30" bgcolor="ffffff" %}
 {% for object in page.objects["offers-intro"] %}
   {% include blocks/section-intro.html bgcolor="ffffff" %}
@@ -134,7 +126,6 @@ objects:
 
 
 
-<!-- TESTIMONIALS -->
 {% include components/spacer.html height="30" bgcolor="f2f2f2" %}
 {% for object in page.objects["testimonials-intro"] %}
   {% include blocks/section-intro.html %}
@@ -147,20 +138,12 @@ objects:
 
 
 
-<!-- PROCESS -->
 {% for object in page.objects["process-intro"] %}
   {% include components/banner-image.html %}
 {% endfor %}
 
 
 
-<!-- SIGN OFF + PROOF -->
-{% include components/spacer.html height="3" bgcolor="ff8c00" %}
-{% include components/spacer.html height="30" bgcolor="1a1a1a" %}
 
-{% for object in page.objects["proof-intro"] %}
-  {% include blocks/section-intro.html bgcolor="1a1a1a" theme="dark" %}
-{% endfor %}
-
-{% include groups/sign-off--proof.html %}
+{% include sign-off.html theme="dark" %}
 

@@ -1,5 +1,22 @@
 
+
+
+{% if forloop.first %}
+<!--
+WIDE SECTION
+Block fixed to 600px wide, with image and text halfs.
+Make sure the height of both the image and text columns
+are set to the height of the image. This vertically
+centres the text in the block. This swaps with two
+columns using the align attribute on the columns.
+-->
+{% endif %}
+
+
+
 {% include components/_settings.html %}
+
+{% assign gutter = '10' %}
 
 {% if include.height %}
   {% assign height = include.height %}
@@ -7,27 +24,26 @@
   {% assign height = "300" %}
 {% endif %}
 
-<!-- full-width.html -->
 {% assign loopindex = forloop.index | modulo: 2 %}
-<table bgcolor="#{{ bgcolor }}" border="0" cellpadding="0" cellspacing="0" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#{{ bgcolor }}">
   <tr>
     <td align="center" style="padding: 0 {{gutter}}px {{gutter | times:2}}px;">
       <table bgcolor="#{{ boxcolor }}" border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table" style="border-radius: 4px;">
         <tr>
           <td style="padding: 0;" class="mobile-wrapper">
-            <!-- TWO COLUMNS -->
+            <!-- COLUMN WRAPPER -->
             <table align="center" cellspacing="0" cellpadding="0" border="0" width="600" class="responsive-table">
               <tr>
                 <td class="mobile-wrapper" valign="middle" style="vertical-align:middle;">
-                  <!-- LEFT COLUMN -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="50%" class="responsive-table" style="height: {{height}}px;" align="{% if forloop.first or loopindex == 1 %}left{% else %}right{% endif %}">
+                  <!-- IMAGE COLUMN // make sure the height is set to the image height -->
+                  <table style="height: {{height}}px;" cellpadding="0" cellspacing="0" border="0" width="50%" class="responsive-table" align="{% if forloop.first or loopindex == 1 %}left{% else %}right{% endif %}">
                     <tr>
                       <td style="padding: 0; vertical-align:middle;" valign="middle">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                           <tr>
                             <td align="center" valign="middle">
                               <a href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}">
-                                <img class="border-reset" src="img/content/{{ object.image }}" width="300" style="display: block; width: 100%; height:auto;
+                                <img class="border-reset--round-top" src="img/content/{{ object.image }}" width="300" style="display: block; width: 100%; height:auto;
                                 {% if forloop.first or loopindex == 1 %}border-top-left-radius: 4px; border-bottom-left-radius: 4px;{% else %}border-top-right-radius: 4px; border-bottom-right-radius: 4px;{% endif %}" alt="" border="0" class="img-max" />
                               </a>
                             </td>
@@ -36,10 +52,10 @@
                       </td>
                     </tr>
                   </table>
-                  <!-- RIGHT COLUMN -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="49.999999%" class="responsive-table" style="height: {{height}}px;" align="{% if forloop.first or loopindex == 1 %}right{% else %}left{% endif %}">
+                  <!-- TEXT COLUMN // make sure the height is set to the image height -->
+                  <table style="height: {{height}}px;" cellpadding="0" cellspacing="0" border="0" width="49.999999%" class="responsive-table" align="{% if forloop.first or loopindex == 1 %}right{% else %}left{% endif %}">
                     <tr>
-                      <td style="vertical-align:middle; padding: {{gutter}}px 0" valign="middle">
+                      <td style="vertical-align:middle; padding: {{gutter | times:2}}px 0" valign="middle">
 
                         {% if include.title-style %}
                           {% include components/title.html %}

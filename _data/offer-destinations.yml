@@ -1,0 +1,43 @@
+
+
+  - title: Crete
+    image: offer-destinations/crete.jpg
+    featured: true
+    location: St Austell, Cornwall
+    content-rows:
+      - content: Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo.
+      - content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo.
+    saved: 45
+    link:
+
+  - title: Athens
+    featured: false
+    image: offer-destinations/athens.jpg
+    location: East Grinstead, West Sussex
+    content: Maecenas sed diam eget risus varius blandit sit amet non magna, nascetur ridiculus mus.
+    saved: 45
+    link:
+
+  - title: Santorini
+    featured: false
+    image: offer-destinations/santorini.jpg
+    location: Near Chester, Cheshire
+    content: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    saved: 40
+    link:
+
+  - title: Mykonos
+    featured: false
+    image: offer-destinations/mykonos.jpg
+    location: Newbury, Berkshire
+    content: Maecenas sed diam eget risus varius blandit sit amet non magna, nascetur ridiculus mus.
+    saved: 53
+    link:
+
+  - title: Rhodes
+    featured: false
+    image: offer-destinations/rhodes.jpg
+    location: East Grinstead, West Sussex
+    content: Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    saved: 45
+    link:

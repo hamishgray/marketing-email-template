@@ -1,176 +1,40 @@
 
+  - title: Langley Castle
+    featured: true
+    image: offers/langley-castle.jpg
+    location: Hexham, Northumberland
+    content: A majestic, 14th-century Northumberland castle, with stunning views and fine dining
+    saved: 38
+    link: https://www.secretescapes.com/langley-castle-hexham-northumberland/sale?utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_060617
 
   - title: The Cornwall Hotel, Spa & Estate
-    category: pampering
+    featured: false
+    image: offers/the-cornwall-hotel-spa-estate.jpg
     location: St Austell, Cornwall
     content: A spa break at a luxury Cornish retreat, with a state-of-the-art wellness centre and infinity pool
-    price: 105
-    price-description: per room per night
     saved: 45
     link: https://www.secretescapes.com/the-cornwall-hotel-spa-and-estate-st-austell-cornwall/sale?utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_060617
 
   - title: Alexander House Hotel & Utopia Spa
-    category: pampering
+    featured: false
+    image: offers/alexander-house-hotel-utopia-spa.jpg
     location: East Grinstead, West Sussex
     content: Five-star spa indulgence at a multi award-winning country house hotel, with optional dinner
-    price: 199
-    price-description: per room per night
     saved: 45
     link: https://www.secretescapes.com/alexander-house-hotel-and-utopia-spa-east-grinstead-west-sussex/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_140617
 
   - title: Carden Park
-    category: pampering
+    featured: false
+    image: offers/carden-park.jpg
     location: Near Chester, Cheshire
     content: An award-winning spa hotel near Chester, with championship golf courses and a private vineyard
-    price: 99
-    price-description: per room per night
     saved: 40
     link: https://www.secretescapes.com/carden-park-near-chester-cheshire/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
 
   - title: Donnington Valley Hotel & Spa
-    category: pampering
+    featured: false
+    image: offers/donnington-valley-hotel-spa.jpg
     location: Newbury, Berkshire
     content: A luxury golf and spa retreat near stunning Highclere Castle – the setting for Downton Abbey
-    price: 159
-    price-description: per room per night
     saved: 53
     link: https://www.secretescapes.com/donnington-valley-hotel-and-spa-newbury-berkshire/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
-
-  - title: The Headland Hotel & Cottages
-    category: seaside
-    location: Newquay, Cornwall
-    content: A dramatic location near Fistral Beach with spa access, and an optional cottage stay
-    price: 119
-    price-description: per room per night
-    saved: 22
-    link: https://www.secretescapes.com/the-headland-hotel-and-cottages-newquay-cornwall/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
-
-  - title: Woodford Bridge Country Club
-    category: seaside
-    location: Milton Damerel, Devon
-    content: Charming self-catering lodges in rural North Devon, for up to six guests
-    price: 39
-    price-description: per lodge per night
-    saved: 57
-    link: https://www.secretescapes.com/woodford-bridge-country-club-milton-damerel-devon/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
-
-  - title: Millers at the Anchor
-    category: seaside
-    location: Minehead, Somerset
-    content: A personality-packed bolthole perfect for Exmoor walks, including award-winning, homemade gin
-    price: 109
-    price-description: per room per night
-    saved: 49
-    link: https://www.secretescapes.com/millers-at-the-anchor-minehead-somerset/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
-
-  - title: Melville Hall Hotel & Spa
-    category: seaside
-    location: Sandown, Isle of Wight
-    content: Escape to a classically-styled hotel on the Isle of Wight, with one dinner and ferry travel
-    price: 115
-    price-description: per room per night
-    saved: 50
-    link: https://www.secretescapes.com/melville-hall-hotel-and-spa-sandown-isle-of-wight/sale?utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
-
-
-  - title: Ellenborough Park
-    category: posh-pads
-    location: Cheltenham, Cotswolds
-    content: Magnificent grounds and architecture at a beautiful honey-hued retreat on the edge of Cheltenham
-    price: 149
-    price-description: per room per night
-    saved: 33
-    link: https://www.secretescapes.com/ellenborough-park-cheltenham-cotswolds/sale?utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_060617
-
-  - title: Langley Castle
-    category: posh-pads
-    location: Hexham, Northumberland
-    content: A majestic, 14th-century Northumberland castle, with stunning views and fine dining
-    price: 129
-    price-description: per room per night
-    saved: 38
-    link: https://www.secretescapes.com/langley-castle-hexham-northumberland/sale?utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_060617
-
-  - title: Yorebridge House
-    category: posh-pads
-    location: Bainbridge, North Yorkshire Dales
-    content: A multi award-winning, five-star boutique hotel filled with traditional charm in the Yorkshire Dales
-    price: 230
-    price-description: per room per night
-    saved: 39
-    link: https://www.secretescapes.com/yorebridge-house-bainbridge-north-yorkshire-dales/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_140617
-
-  - title: Coombe Abbey Hotel
-    category: posh-pads
-    location: Coventry, Warwickshire
-    content: A relaxing hotel in a 12th-century abbey building, with breakfast and optional dinner
-    price: 89
-    price-description: per room per night
-    saved: 49
-    link: https://www.secretescapes.com/coombe-abbey-hotel-coventry-warwickshire/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
-
-  - title: Sanderson
-    category: posh-pads
-    location: Fitzrovia, London
-    content: A dream-like Philippe Starck hotel icon in London's Fitzrovia
-    price: 199
-    price-description: per room per night
-    saved: 45
-    link: https://www.secretescapes.com/sanderson-fitzrovia-london/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
-
-
-  - title: East Thorne Yurts
-    category: unique
-    location: Bude, Cornwall
-    content: A unique glamping experience in a spacious yurt with a cosy log burning stove
-    price: 69
-    price-description: per yurt per night
-    saved: 36
-    link: https://www.secretescapes.com/east-thorne-yurts-bude-cornwall/sale?utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_060617
-
-  - title: Good Hotel London
-    category: unique
-    location: Royal Victoria Dock, London
-    content: Minimalist chic at a floating concept pop-up hotel, complete with a roof terrace and hip interiors
-    price: 58
-    price-description: per room per night
-    saved: 39
-    link: https://www.secretescapes.com/good-hotel-london-royal-victoria-dock-london/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_140617
-
-  - title: Coastal Cabins
-    category: unique
-    location: Hartland, Devon
-    content: A self-catered coastal cabin stay by a picturesque fishing lake in North Devon
-    price: 55
-    price-description: per cabin per night
-    saved: 26
-    link: https://www.secretescapes.com/coastal-cabins-hartland-devon/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
-
-  - title: Swinton Bivouac
-    category: unique
-    location: Masham, North Yorkshire
-    content: Beautiful award-winning hand-crafted lodges and yurts in the unspoilt dales, for up to seven people
-    price: 109
-    price-description: per lodge per night
-    saved: 34
-    link: https://www.secretescapes.com/swinton-bivouac-masham-north-yorkshire/sale?utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
-
-  - title: The Valley
-    category: unique
-    location: Truro, Cornwall
-    content: Self-catering cottages in the lovely Cornish countryside, with space for up to four people
-    price: 70
-    price-description: per cottage per night
-    saved: 45
-    link: https://www.secretescapes.com/the-valley-truro-cornwall/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
-
-  - title: Freedom Camping
-    category: unique
-    location: East Grinstead, West Sussex
-    content: Pop-up glamping in the West Sussex countryside, in a luxury bell tent sleeping up to four
-    price: 80
-    price-description: per room per night
-    saved: 52
-    link: https://www.secretescapes.com/freedom-camping-east-grinstead-west-sussex/sale?gce_sls=0&utm_source=SE&utm_medium=Hub&utm_campaign=Benefit_220617
-
-
