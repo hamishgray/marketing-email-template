@@ -1,0 +1,41 @@
+
+
+
+
+
+
+{% for object in page.objects["intro"] %}
+  {% include blocks/banner.html button-style="large" %}
+{% endfor %}
+
+
+
+
+
+{% include components/spacer.html height="30" bgcolor="f2f2f2" %}
+{% for object in page.objects["expert-pick-intro"] %}
+  {% include blocks/section-intro.html title-style="h1" %}
+{% endfor %}
+
+{% assign featured-destination = site.data.offer-destinations | where: "featured","true" %}
+{% for object in featured-destination %}
+  {% include blocks/feature.html align="center" title-style="h2" button-style="large" %}
+{% endfor %}
+
+
+
+
+
+{% for object in page.objects["destinations-intro"] %}
+  {% include blocks/section-intro.html title-style="h1" %}
+{% endfor %}
+
+{% assign destinations = site.data.offer-destinations | where:"featured","false" %}
+{% for object in destinations %}
+  {% include offer/two-column.html align="center" %}
+{% endfor %}
+
+{% include components/spacer.html height="15" bgcolor="f2f2f2" %}
+{% include includes/button.html button-style="large" %}
+
+
