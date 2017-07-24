@@ -1,7 +1,7 @@
 
   - title: Langley Castle
     featured: true
-    image: offers/langley-castle.jpg
+    image: offers-langley-castle.jpg
     location: Hexham, Northumberland
     content: A majestic, 14th-century Northumberland castle, with stunning views and fine dining
     saved: 38
@@ -9,7 +9,7 @@
 
   - title: The Cornwall Hotel, Spa & Estate
     featured: false
-    image: offers/the-cornwall-hotel-spa-estate.jpg
+    image: offers-the-cornwall-hotel-spa-estate.jpg
     location: St Austell, Cornwall
     content: A spa break at a luxury Cornish retreat, with a state-of-the-art wellness centre and infinity pool
     saved: 45
@@ -17,7 +17,7 @@
 
   - title: Alexander House Hotel & Utopia Spa
     featured: false
-    image: offers/alexander-house-hotel-utopia-spa.jpg
+    image: offers-alexander-house-hotel-utopia-spa.jpg
     location: East Grinstead, West Sussex
     content: Five-star spa indulgence at a multi award-winning country house hotel, with optional dinner
     saved: 45
@@ -25,7 +25,7 @@
 
   - title: Carden Park
     featured: false
-    image: offers/carden-park.jpg
+    image: offers-carden-park.jpg
     location: Near Chester, Cheshire
     content: An award-winning spa hotel near Chester, with championship golf courses and a private vineyard
     saved: 40
@@ -33,7 +33,7 @@
 
   - title: Donnington Valley Hotel & Spa
     featured: false
-    image: offers/donnington-valley-hotel-spa.jpg
+    image: offers-donnington-valley-hotel-spa.jpg
     location: Newbury, Berkshire
     content: A luxury golf and spa retreat near stunning Highclere Castle – the setting for Downton Abbey
     saved: 53

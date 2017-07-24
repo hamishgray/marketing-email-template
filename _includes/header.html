@@ -1,3 +1,5 @@
+
+
 {% if page.theme == 'dark' %}
   {% assign top_bgcolor = site.data.style.color-bgcolor-dark %}
   {% assign header_bgcolor = site.data.style.color-boxcolor-dark %}
@@ -15,7 +17,7 @@
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
-    <td bgcolor="#{{top_bgcolor}}" align="center" style="padding: {{site.data.style.gutter | divided_by:1.5}}px 0;">
+    <td bgcolor="#{{top_bgcolor}}" align="center" style="padding: 10px 0;">
       <!-- HIDDEN PREHEADER TEXT -->
       <div style="display: none; font-size: 1px; color: #{{color-text-title}}; line-height: 1px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
         {{page.email-title}}
@@ -47,12 +49,14 @@
       <div align="center">
         <table border="0" cellpadding="0" cellspacing="0" width="600" class="wrapper">
           <tr>
-            <td style="padding: {{site.data.style.gutter | times:2}}px {{site.data.style.gutter | times:2}}px;" class="logo">
+            <td style="padding: 15px 15px;" class="logo">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="padding: {{gutter}}px {{gutter}}px;" class="logo" align="center">
+                  <td style="padding: 15px 15px;" class="logo" align="center">
                     <a href="http://www.secretescapes.com/current-sales">
-                      <img alt="Secret Escapes Logo" src="img/logo-secret-escapes{% if page.theme == 'dark' %}--dark{% endif %}.png" width="162" style="display:block; padding: 5px 0 0;" border="0" />
+
+                      <img alt="Secret Escapes Logo" src="{% include includes/image-link.html %}{% if page.theme == 'dark' %}3/logo-secret-escapes--dark.png{% else %}2/logo-secret-escapes.png{% endif %}" width="162" style="display:block; padding: 5px 0 0;" border="0" />
+
                     </a>
                   </td>
                 </tr>

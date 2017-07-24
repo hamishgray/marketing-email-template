@@ -5,7 +5,7 @@
 <!--
 FEATURE BLOCK
 Fixed width section at 600px wide. The box background colour should be
-slightly contrasted to the email background. 
+slightly contrasted to the email background.
 -->
 {% endif %}
 
@@ -27,7 +27,7 @@ slightly contrasted to the email background.
               <tr>
                 <td>
                   <a href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}">
-                    <img src="img/content/{{ object.image }}" width="600" border="0" alt="" style="display: block; {% unless object.super-title %}border-top-left-radius: 4px; border-top-right-radius: 4px;{% endunless %}" class="img-max" />
+                    <img src="{% include includes/image-link.html %}{{ object.image }}" width="600" border="0" alt="" style="display: block; {% unless object.super-title %}border-top-left-radius: 4px; border-top-right-radius: 4px;{% endunless %}" class="img-max" />
                   </a>
                 </td>
               </tr>
