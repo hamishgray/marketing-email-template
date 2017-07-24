@@ -2,3 +2,5 @@
 markdown: kramdown
 exclude: [node_modules, gulpfile.js, package.json, bower_components, bower.json, README.md]
 
+image-link: http://image.email.secretescapes.com/lib/fe8a1272746c017a7d/m/
+dev-image-link: img/content/

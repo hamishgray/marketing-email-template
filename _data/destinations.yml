@@ -1,7 +1,7 @@
 
   - title: Mallorca, Spain
     featured: true
-    image: destinations/mallorca.jpg
+    image: 3/mallorca_bay.jpg
     content: "Forget the Mallorca of the past. We love the island now for its gorgeously well-appointed hotels, all the better for enjoying those famous white-sand beaches"
     button: true
     button-label: Find out more
@@ -9,7 +9,7 @@
 
   - title: Corfu, Greece
     featured: false
-    image: destinations/corfu.jpg
+    image: 2/Corfu_EuropeanSummer.jpg
     content: "A much-loved spot with the Secret Escapes team: breathtakingly gorgeous, culturally fascinating, and studded with charming hotels and resorts."
     button: true
     button-label: Find out more
@@ -17,7 +17,7 @@
 
   - title: Split, Croatia
     featured: false
-    image: destinations/split.jpg
+    image: 3/Split2_EuropeanSummer.jpg
     content: "A heady blend of ancient and modern, Split offers a dramatic setting with a fun-loving, youthful vibe. Top tip: craft beers and Mexican food at Te Je To. Yum."
     button: true
     button-label: Find out more
@@ -25,7 +25,7 @@
 
   - title: Lisbon, Portugal
     featured: false
-    image: destinations/lisbon.jpg
+    image: 3/lisbon.jpg
     content: "There’s nothing like the blue sky of a Lisbon summer, so make sure you book a hotel with a fine terrace. Enjoy fresh seafood, lively bars and plenty of shopping."
     button: true
     button-label: Find out more
@@ -33,7 +33,7 @@
 
   - title: Nice & Cannes, France
     featured: false
-    image: destinations/nice.jpg
+    image: 2/Nice_EuropeanSummer.jpg
     content: "Beautiful Nice is as glamorous as ever. Fancy taking it up a notch? Make like a celeb and head to Cannes. And remember – we can get you all this luxe for less."
     button: true
     button-label: Find out more
@@ -41,7 +41,7 @@
 
   - title: Barcelona, Spain
     featured: false
-    image: destinations/barcelona.jpg
+    image: 3/barcelona.jpg
     content: "A city like no other, the fascinating architecture of Barcelona is perfect for summertime wandering. Our top tip: choose a hotel with rooftop pool."
     button: true
     button-label: Find out more
@@ -49,7 +49,7 @@
 
   - title: Venice & Rimini, Italy
     featured: false
-    image: destinations/venice.jpg
+    image: 3/Venice2_EuropeanSummer.jpg
     content: "Two of our favourite spots for summer trips, both on the Adriatic: Venice, for culture and photos, and Rimini, for beaches and up-til-dawn nightlife."
     button: true
     button-label: Find out more
@@ -57,9 +57,34 @@
 
   - title: Rhodes, Greece
     featured: false
-    image: destinations/rhodes.jpg
+    image: 3/rhodes.jpg
     content: "Azure bays, jagged cliffs, atmospheric medieval towns… a holiday to Rhodes is a unique experience. And the best way to do it is in complete luxury – for less."
     button: true
     button-label: Find out more
     link:
 
+
+
+  - title: Algarve
+    featured: false
+    image: 3/Algarve_EuropeanSummer.jpg
+    content:
+    button:
+    button-label:
+    link:
+
+  - title: Santorini
+    featured: false
+    image: 3/santorini.jpg
+    content:
+    button:
+    button-label:
+    link:
+
+  - title: Mykonos
+    featured: false
+    image: 3/mykonos.jpg
+    content:
+    button:
+    button-label:
+    link:
