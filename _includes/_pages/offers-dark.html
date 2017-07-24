@@ -1,0 +1,77 @@
+
+
+
+
+{% for object in page.objects["intro"] %}
+  {% include blocks/banner.html button-style="large" bgcolor="1a1a1a" boxcolor="1a1a1a" theme="dark" %}
+{% endfor %}
+
+
+
+
+{% include components/spacer.html height="15" bgcolor="2a2a2a" %}
+
+{% for object in page.objects["editors-pick-intro"] %}
+  {% include blocks/section-intro.html title-style="h1" bgcolor="2a2a2a" theme="dark" paragraph-style="lead" %}
+{% endfor %}
+
+{% assign featured-offer = site.data.offers | where:"featured","true" %}
+{% for object in featured-offer %}
+  {% include offer/feature.html align="left" boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+
+
+
+{% for object in page.objects["offers-intro"] %}
+  {% include blocks/section-intro.html title-style="h1" paragraph-style="lead" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+{% assign offers = site.data.offers | where:"featured","false" %}
+{% for object in offers %}
+  {% include offer/full-width.html align="left" boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+
+
+
+{% for object in page.objects["offers-intro"] %}
+  {% include blocks/section-intro.html title-style="h1" paragraph-style="lead" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+{% assign offers = site.data.offers | where:"featured","false" %}
+{% for object in offers %}
+  {% include offer/two-column.html align="left" boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+
+
+{% include components/spacer.html height="5" bgcolor="2a2a2a" %}
+{% include includes/button.html button-label="View all offers" bgcolor="2a2a2a"  %}
+
+
+
+
+
+{% for object in page.objects["testimonials-intro"] %}
+  {% include blocks/section-intro.html title-style="h1" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+{% assign testimonials = site.data.testimonials | where:"featured","false" %}
+{% for object in testimonials %}
+  {% include blocks/testimonial-two-column.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+
+
+
+
+{% for object in page.objects["testimonials-intro"] %}
+  {% include blocks/section-intro.html title-style="h1" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+{% assign testimonials = site.data.testimonials | where:"featured","false" %}
+{% for object in testimonials %}
+  {% include blocks/testimonial.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+

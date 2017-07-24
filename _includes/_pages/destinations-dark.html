@@ -1,0 +1,73 @@
+
+
+
+
+{% for object in page.objects["intro"] %}
+  {% include blocks/banner.html button-style="large" bgcolor="1a1a1a" boxcolor="1a1a1a" theme="dark" %}
+{% endfor %}
+
+
+
+
+
+{% include components/spacer.html height="30" bgcolor="2a2a2a" %}
+{% for object in page.objects["featured-destinations-intro"] %}
+  {% include blocks/section-intro.html bgcolor="2a2a2a" theme="dark" title-style="h1" %}
+{% endfor %}
+
+{% assign featured-destinations = site.data.destinations | where:"featured","true" %}
+{% for object in featured-destinations %}
+  {% include blocks/feature.html align="center" title-style="h2" button-style="large" paragraph-style="lead" boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+
+
+
+
+{% for object in page.objects["destinations-intro"] %}
+  {% include blocks/section-intro.html bgcolor="2a2a2a" theme="dark" title-style="h1" %}
+{% endfor %}
+
+{% assign destinations = site.data.destinations | where:"featured","false" %}
+{% for object in destinations %}
+  {% include blocks/full-width.html align="left" height="240" boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+
+
+
+
+{% for object in page.objects["destinations-intro"] %}
+  {% include blocks/section-intro.html bgcolor="2a2a2a" theme="dark" title-style="h1" %}
+{% endfor %}
+
+{% assign destinations = site.data.destinations | where:"featured","false" %}
+{% for object in destinations %}
+  {% include blocks/two-column.html align="left" height="240" boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+
+
+
+
+{% for object in page.objects["testimonials-intro"] %}
+  {% include blocks/section-intro.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" title-style="h1" %}
+{% endfor %}
+
+{% assign testimonials = site.data.testimonials | where:"featured","false" %}
+{% for object in testimonials %}
+  {% include blocks/testimonial-two-column.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}
+
+
+
+
+
+{% for object in page.objects["testimonials-intro"] %}
+  {% include blocks/section-intro.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" title-style="h1" %}
+{% endfor %}
+
+{% assign testimonials = site.data.testimonials | where:"featured","false" %}
+{% for object in testimonials %}
+  {% include blocks/testimonial.html boxcolor="333333" bgcolor="2a2a2a" theme="dark" %}
+{% endfor %}

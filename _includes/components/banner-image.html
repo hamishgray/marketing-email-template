@@ -5,7 +5,7 @@
 <!--
 BANNER IMAGE SECTION
 Banner image section with a large background image. The image
-should be 1500px wide, and at least 500px high.
+should be 1500px wide, and at least 500px high. 
 -->
 {% endif %}
 
@@ -19,10 +19,10 @@ should be 1500px wide, and at least 500px high.
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%" height="300">
   <tr>
-    <td align="center" background="{% include includes/image-link.html %}{{ object.image }}" bgcolor="#{{ site.data.style.color-se-grey }}" valign="middle" style="vertical-align: middle; background-position: center; -webkit-background-size: cover; background-size: cover; ">
+    <td align="center" background="img/content/{{ object.image }}" bgcolor="#{{ site.data.style.color-se-grey }}" valign="middle" style="vertical-align: middle; background-position: center; -webkit-background-size: cover; background-size: cover; ">
       <!--[if gte mso 9]>
       <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;height:300px;">
-        <v:fill type="frame" src="{% include includes/image-link.html %}{{ object.image }}" color="#{{ site.data.style.color-se-grey }}" />
+        <v:fill type="frame" src="img/content/{{ object.image }}" color="#{{ site.data.style.color-se-grey }}" />
         <v:textbox inset="0,0,0,0">
       <![endif]-->
       <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" class="responsive-table" height="350">
@@ -34,7 +34,7 @@ should be 1500px wide, and at least 500px high.
 
                   {% if object.image-title %}
                   <a href="{% if object.link %}{{ object.link }}{% else %}{{ page.campaign-link }}{% endif %}">
-                    <img src="{% include includes/image-link.html %}{{ object.image-title }}" width="570" class="img-max" />
+                    <img src="img/content/{{ object.image-title }}" width="570" class="img-max" />
                   </a>
                   {% else %}
 
