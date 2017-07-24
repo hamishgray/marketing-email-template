@@ -32,7 +32,7 @@
                 {% for sub_object in object.content-rows %}
 
                   <tr>
-                    <td align="center" style="padding: 0 {{gutter | times:2}}px{% unless forloop.last %} {{gutter}}px{% endunless %}; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p-lead }}">
+                    <td align="center" style="padding: 0 {{gutter | times:2}}px{% unless forloop.last %} {{gutter}}px{% endunless %}; color: #{{ color-text-paragraph }}; {{ site.data.style.text-p-em }}">
 
                       {% if forloop.first %}
                         <sub style="font-weight: 400;font-size:1.7em;margin-right: 3px;font-family: Helvetica,Arial;font-style:normal; color: #{{ site.data.style.color-se-orange }}">&ldquo;</sub>
