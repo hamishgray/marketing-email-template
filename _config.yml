@@ -1,4 +1,4 @@
 # Build settings
 markdown: kramdown
-exclude: [node_modules, gulpfile.js, package.json, bower_components, bower.json, README.md]
+exclude: [node_modules, gulpfile.js, package.json, package-lock.json]
 
