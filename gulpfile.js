@@ -1,59 +1,68 @@
 var gulp         = require('gulp');
-var fs           = require('fs');
 var cp           = require('child_process');
 var path         = require('path');
 var del          = require('del');
-var vfs          = require('vinyl-fs');
 var map          = require('map-stream');
 var browserSync  = require('browser-sync');
 var size         = require('gulp-warn-size');
-var watch        = require('gulp-watch');
 var image        = require('gulp-image');
 var message      = require('gulp-message');
-var gulpSequence = require('gulp-sequence');
 var htmltidy     = require('gulp-htmltidy');
 var replace      = require('gulp-replace');
 
 
-// ----------------------------------------------------------------------  build
 
-// build the jekyll site
-gulp.task('build-jekyll', function (done) {
-  return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
-  .on('close', done);
-});
+/////////////////////////////////////////////////////////////////////  utilities
 
-// rebuild jekyll site and reload
-gulp.task('rebuild-jekyll', ['build-jekyll'], function () {
-  browserSync.reload();
-});
-
-// serve site with browserSync. also mirrors site to sub-directory
-gulp.task('serve', function() {
+// start browserSync local server and show under site subdirectory
+function browserSyncServe() {
   browserSync.init({
     ui: false,
     server: {
       baseDir: '_site/'
     }
   });
-});
+}
 
-gulp.task('build-images', function(cb) {
+// Reload BrowserSync for when site changes are made
+function browserSyncReload(done) {
+  browserSync.reload();
+  done();
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////  build
+
+// build the jekyll site
+function buildJekyll(done) {
+  return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+    .on('close', done);
+}
+
+// build for image files
+function buildImages() {
   return gulp.src('./img/**/*.*')
-  .pipe(gulp.dest('./_site/img/'))
-});
+    .pipe(gulp.dest('./_site/img/'));
+}
 
 
-// ----------------------------------------------------------------------  watch
 
-// watch for jekyll rebuild
-gulp.task('watch-jekyll', function () {
-  gulp.watch(['**/*.*', '!_site/**/*','!node_modules/**/*','!.sass-cache/**/*' ], ['rebuild-jekyll']);
-});
+/////////////////////////////////////////////////////////////////////////  watch
 
-// watch for images
-gulp.task('watch-images', ['build-images'], function() {
-  gulp.watch(['img/**/*.*'], ['build-images'])
+// Watch files
+function watchFiles() {
+  gulp.watch( // watch for jekyll
+    [
+      '**/*.*',
+      '!_site/**/*',
+      '!node_modules/**/*',
+      '!.sass-cache/**/*'
+    ],
+    gulp.series(rebuild)
+  );
+  // watch for images
+  gulp.watch('_assets/img/**/*.*', buildImages)
     // updates the compiled folder if an image is deleted
     // modified snippet from https://gulpjs.org/recipes/handling-the-delete-event-on-watch
     .on('change', function (event) {
@@ -63,43 +72,39 @@ gulp.task('watch-images', ['build-images'], function() {
         del.sync(destFilePath);
       }
       browserSync.reload();
+    });
+}
+
+
+
+//////////////////////////////////////////////////////////////////////  compress
+
+// compress & check all jpgs
+function compressJpgs() {
+  return gulp.src('./_site/img/**/*.jpg')
+    .pipe(image())
+    .pipe(size(200000)) // checks image size in bytes - 200kb
+    .on('error', function () {
+      message.error('images need to be under 200kb for exact target');
+      process.exit();
     })
-});
+    .pipe(gulp.dest('./_site/img'));
+}
 
-
-// -------------------------------------------------------------------  compress
-
-// compress images files for live
-gulp.task('compress-images', function () {
-
-  // checks for updated image name id
-  vfs.src('img/**/*.*')
-    .pipe(map(function (file, cb) {
-      // find filename for each file
-      var fullPath = file.path;
-          fullPath = fullPath.split('/');
-      var fileName = fullPath[fullPath.length-1]; // finds last item in array
-      // kill the task if it uses the default image name id
-      if (fileName.match(/^projectinitialsMM/g)) {
-        message.error('please update the image name prefix - currently using \"projectinitialsMM\"');
-        process.exit();
-      }
-      cb(null, file); // matidtory callback for map-stream function - .pipe(map)
-    }));
-
-  // process images
-  return gulp.src('./_site/img/**/*')
-  .pipe(image())
-  .pipe(size(200000)) // checks image size in bytes - 200kb
-  .on('error', function () {
-    message.error('images need to be under 200kb for exact target');
-    process.exit();
-  })
-  .pipe(gulp.dest('./_site/img'));
-})
+// compress & check other image formats that aren't jpgs
+function compressOtherImages() {
+  return gulp.src(['./_site/img/**/*', '!./_site/img/**/*.jpg'])
+    .pipe(image())
+    .pipe(size(5000000)) // checks image size in bytes - 5mb
+    .on('error', function () {
+      message.error('image is too large for email');
+      process.exit();
+    })
+    .pipe(gulp.dest('./_site/img'));
+}
 
 // compress html files for live
-gulp.task('compress-html', function () {
+function compressHtml() {
   return gulp.src('./_site/**/*.html')
     .pipe(htmltidy({
       'indent': true,
@@ -109,32 +114,134 @@ gulp.task('compress-html', function () {
     }))
     // cant stop htmltidy from auto closing this custom element, Exact target wont accept it closed, so need to replace
     .pipe(replace('<custom name="opencounter" type="tracking" />', '<custom name="opencounter" type="tracking">'))
-    .pipe(gulp.dest('./_site'))
-})
+    .pipe(gulp.dest('./_site'));
+}
+
+
+
+/////////////////////////////////////////////////  cache buster for exact target
+
+// random string generator
+function makeRandomString(length) {
+  let result = '';
+  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let charactersLength = characters.length;
+  for ( let i = 0; i < length; i++ ) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
+// creates Exact Target version of the email files for upload
+function createEtVersion() {
+  // set global variables
+  const prefix = 'projectid-';
+  const maxCharacters = 36;
+  const remainingCharacters = maxCharacters - prefix.length;
+  const etUrl = 'http://image.email.secretescapes.com/lib/fe91127277660c7b71/m/8/';
+  const imgFolder = 'img/';
+  const imgDataMap = [];
+  // loop through images
+  return gulp.src('./_site/img/**/*')
+    .pipe(map(function (file, cb,) {
+      // capture file names
+      const imgFilename = file.basename;
+      const imgNewFilename = prefix + makeRandomString(remainingCharacters) + file.extname;
+      // loop through html & map where each images is used
+      gulp.src('./_site/*.html')
+        .pipe(map(function (file, cb,) {
+          const htmlContent = file.contents.toString();
+          // add html to data map
+          if (htmlContent.includes(imgFilename)) { // does image appear in HTML?
+            if (!imgDataMap.find(item => item.htmlFile === file.basename)) { // does HTML already appear in data map?
+              imgDataMap.push(
+                {
+                  htmlFile: file.basename,
+                  images: [],
+                }
+              );
+            }
+            // add images used in html to data map
+            for (const item of imgDataMap) {
+              if (item.htmlFile === file.basename) {
+                if (!item.images.find(image => image.original === imgFilename)) { // does image already appear in data map?
+                  item.images.push(
+                    {
+                      'original': imgFilename,
+                      'new': imgNewFilename,
+                    }
+                  );
+                }
+              }
+            }
+          }
+          cb(null, file); // matidtory callback for map-stream function - .pipe(map)
+        }));
+      file.basename = imgNewFilename; // change image file to new cachebusted name
+      cb(null, file); // matidtory callback for map-stream function - .pipe(map)
+    }))
+    .pipe(gulp.dest('./_site/_et-version/_upload-these'))
+    .on('finish', function(){
+      // find & replace all image names in html using the generated data map
+      gulp.src('./_site/*.html')
+        .pipe(map(function (file, cb,) {
+          imgDataMap.filter(item => { // get data for current html file
+            if (item.htmlFile === file.basename){
+              let htmlContent = file.contents.toString();
+              // loop each image in map, find & replace full path with url
+              item.images.map(image => {
+                const imgFilenameRegexEscaped = image.original.replace(/\./g, '\\.');
+                const imgPath = imgFolder + imgFilenameRegexEscaped;
+                const imgPathFileRegex = new RegExp(imgPath, 'gm');
+                const imgNewPath = etUrl + image.new;
+                htmlContent = htmlContent.replace(imgPathFileRegex, imgNewPath);
+              });
+              // after all find & replaces, write to the actual file
+              file.contents = new Buffer.from(htmlContent);
+            }
+          });
+          cb(null, file); // matidtory callback for map-stream function - .pipe(map)
+        }))
+        .pipe(gulp.dest('./_site/_et-version'));
+    });
+}
+
 
 
 ///////////////////////////////////////////////////////////////////  build tasks
 
-// builds jekyll site & watches for changes
-gulp.task('default', gulpSequence(
-    ['build-jekyll'],
-    [
-      'watch-jekyll',
-      'watch-images'
-    ],
-    'serve'
+// define complex tasks
+var rebuild = gulp.series(buildJekyll, browserSyncReload);
+var serve = gulp.series(browserSyncServe);
+var watch = gulp.series(watchFiles);
+var build = gulp.parallel(
+  buildJekyll,
+  buildImages
+);
+var compress = gulp.parallel(
+  compressJpgs,
+  compressOtherImages,
+  compressHtml
+);
+
+// build and watch emails for development
+exports.default = gulp.series(
+  build,
+  gulp.parallel(
+    serve,
+    watch
   )
 );
 
-// builds jekyll site for deploying to live
-gulp.task('build', gulpSequence(
-    [
-      'build-jekyll',
-      'build-images'
-    ],
-    [
-      'compress-images',
-      'compress-html'
-    ]
-  )
+// compile & compress the emails
+exports.compile = gulp.series(
+  build,
+  compress
+);
+
+// compile, compress & cachebust images for uploading to Exact Target
+exports.et = gulp.series(
+  build,
+  compress,
+  createEtVersion
 );
