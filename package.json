@@ -7,7 +7,7 @@
     "et": "gulp et"
   },
   "dependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "del": "^3.0.0",
     "gulp": "^4.0.2",
     "gulp-htmltidy": "^0.2.4",
